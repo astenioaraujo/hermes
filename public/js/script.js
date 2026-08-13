@@ -60,9 +60,26 @@
   if (!trilha) return;
 
   var slides = trilha.children;
-  var pontos = document.getElementById('carrosselPontos').children;
+  var caixaPontos = document.getElementById('carrosselPontos');
+  var pontos = caixaPontos.children;
+  var setaAnterior = document.getElementById('carrosselAnterior');
+  var setaProxima = document.getElementById('carrosselProximo');
   var atual = 0;
   var total = slides.length;
+
+  /* Com um produto só não há o que navegar: some com setas e pontos.
+     Ao descomentar o próximo slide no HTML, os controles voltam sozinhos. */
+  var navegavel = total > 1;
+  setaAnterior.hidden = !navegavel;
+  setaProxima.hidden = !navegavel;
+  caixaPontos.hidden = !navegavel;
+
+  /* A contagem no rótulo acompanha quantos slides existem de fato */
+  for (var r = 0; r < total; r++) {
+    var titulo = slides[r].querySelector('h3');
+    slides[r].setAttribute('aria-label',
+      (r + 1) + ' de ' + total + (titulo ? ': ' + titulo.textContent : ''));
+  }
 
   function mostrar(i) {
     atual = (i + total) % total;
@@ -76,10 +93,8 @@
     }
   }
 
-  document.getElementById('carrosselProximo')
-    .addEventListener('click', function () { mostrar(atual + 1); parar(); });
-  document.getElementById('carrosselAnterior')
-    .addEventListener('click', function () { mostrar(atual - 1); parar(); });
+  setaProxima.addEventListener('click', function () { mostrar(atual + 1); parar(); });
+  setaAnterior.addEventListener('click', function () { mostrar(atual - 1); parar(); });
 
   for (var i = 0; i < pontos.length; i++) {
     (function (indice) {
@@ -110,7 +125,7 @@
   function parar() {
     if (relogio) { clearInterval(relogio); relogio = null; }
   }
-  if (!reduced) {
+  if (!reduced && navegavel) {
     relogio = setInterval(function () { mostrar(atual + 1); }, 7000);
     var palco = trilha.parentNode;
     palco.addEventListener('mouseenter', parar);

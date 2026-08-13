@@ -59,21 +59,9 @@
         <a class="btn btn--primary" href="#contato">Falar com a Inovai</a>
         <a class="btn btn--ghost" href="#metodo">Como funciona <span aria-hidden="true">›</span></a>
       </div>
-    </div>
 
-    <div class="hero__glow" aria-hidden="true"></div>
-  </section>
-
-
-  <!-- ============ PRODUTOS (CARROSSEL) ============ -->
-  <section class="section produtos" id="produtos">
-    <div class="wrap">
-      <header class="section__head section__head--center">
-        <p class="eyebrow reveal">O que a Inovai oferece</p>
-        <h2 class="reveal">Seis frentes<br>de trabalho.</h2>
-      </header>
-
-      <div class="carrossel reveal" aria-roledescription="carrossel" aria-label="Produtos da Inovai">
+      <div class="carrossel hero__midia reveal" aria-roledescription="carrossel"
+           aria-label="Produtos da Inovai">
         <div class="carrossel__palco">
           <ul class="carrossel__trilha" id="carrosselTrilha">
         <li class="slide" role="group" aria-roledescription="slide"
@@ -88,6 +76,13 @@
             <p>Planejamento, fluxo de caixa e gestão de custos, do diagnóstico ao acompanhamento diário.</p>
           </div>
         </li>
+        <!--
+          Os outros produtos entram aqui conforme as imagens ficarem prontas.
+          Basta descomentar um bloco por vez e acrescentar o ponto correspondente
+          em .carrossel__pontos — as setas e os pontos aparecem sozinhos a partir
+          do segundo slide.
+        -->
+        <!--
         <li class="slide" role="group" aria-roledescription="slide"
             aria-label="2 de 6: Livro">
                   <div class="slide__vazio">
@@ -138,29 +133,29 @@
             <p>[Uma linha sobre a metodologia das cores — o que ela revela.]</p>
           </div>
         </li>
+        -->
           </ul>
         </div>
 
         <button class="carrossel__seta carrossel__seta--anterior" type="button"
-                id="carrosselAnterior" aria-label="Produto anterior">
+                id="carrosselAnterior" aria-label="Produto anterior" hidden>
           <span aria-hidden="true">‹</span>
         </button>
         <button class="carrossel__seta carrossel__seta--proximo" type="button"
-                id="carrosselProximo" aria-label="Próximo produto">
+                id="carrosselProximo" aria-label="Próximo produto" hidden>
           <span aria-hidden="true">›</span>
         </button>
 
-        <div class="carrossel__pontos" id="carrosselPontos" role="tablist" aria-label="Escolher produto">
+        <div class="carrossel__pontos" id="carrosselPontos" role="tablist"
+             aria-label="Escolher produto" hidden>
           <button type="button" role="tab" aria-label="Consultoria" aria-selected="true"></button>
-          <button type="button" role="tab" aria-label="Livro" aria-selected="false"></button>
-          <button type="button" role="tab" aria-label="Palestras" aria-selected="false"></button>
-          <button type="button" role="tab" aria-label="Treinamentos" aria-selected="false"></button>
-          <button type="button" role="tab" aria-label="Mentorias" aria-selected="false"></button>
-          <button type="button" role="tab" aria-label="Metodologia das Cores" aria-selected="false"></button>
         </div>
       </div>
     </div>
+
+    <div class="hero__glow" aria-hidden="true"></div>
   </section>
+
 
   <!-- ============ NÚMEROS ============ -->
   <section class="stats">
