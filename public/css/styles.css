@@ -111,13 +111,20 @@ p:last-child{ margin-bottom:0; }
   max-width:var(--wrap);
   margin-inline:auto;
   padding:0 var(--gutter);
-  height:52px;
+  height:64px;
   display:flex; align-items:center; gap:32px;
 }
 
 .nav__brand{
-  font-size:.95rem; font-weight:600; letter-spacing:-.02em;
-  white-space:nowrap;
+  display:flex; align-items:center;
+  flex:0 0 auto;
+}
+.nav__brand img{
+  height:34px; width:auto;
+  display:block;
+}
+@media (max-width:520px){
+  .nav__brand img{ height:28px; }
 }
 
 .nav__links{ display:flex; gap:30px; margin-left:auto; }
@@ -178,7 +185,7 @@ p:last-child{ margin-bottom:0; }
   position:relative;
   min-height:min(92vh, 860px);
   display:flex; align-items:center;
-  padding:150px 0 clamp(80px,12vw,140px);
+  padding:162px 0 clamp(80px,12vw,140px);
   overflow:hidden;
 }
 
