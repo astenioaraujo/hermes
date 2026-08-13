@@ -18,8 +18,10 @@ estático, com produtos Flask entrando aos poucos.
   Flask com service role e o schema ficar fora do `public` exposto pela API).
 - Se vier projeto próprio: URL e chaves distintas, nunca reaproveitar as
   credenciais do MATRX aqui.
-- **Deploy separado.** Serviço próprio no Render, dentro do Project `HERMES`
-  (o MATRX vive no Project `MATRX`, mesmo Workspace).
+- **Deploy separado.** Render, Project `HERMES` (o MATRX vive no Project
+  `MATRX`, mesmo Workspace). Project no Render não custa nada — é agrupamento;
+  quem custa é o serviço. Hoje o site é **Static Site (grátis)**, publicando a
+  pasta `public/`; Web Service pago só quando houver back-end de verdade.
 - Motivo: aqui o navegador fala direto com a API do Supabase usando a chave
   anon — ao contrário do MATRX, onde tudo passa pelo servidor Flask com a
   service role key. RLS aqui é a fronteira de segurança de verdade, não uma
@@ -49,16 +51,21 @@ código versionado — só em variável de ambiente do lado servidor.
 ## Estrutura
 
 ```
-app.py            rotas ( / e /saude )
-templates/        HTML (Jinja2) — index.html é o site da Inovai
-static/css/       styles.css
-static/js/        script.js (menu mobile, reveal on scroll, ano no rodapé)
-static/img/       imagens (vazio: falta a foto e os logos de clientes)
-docs/futuro/      HTML de reserva, NÃO publicado (seções de livro e cursos)
+public/           o que vai ao ar (Publish Directory do Static Site)
+  index.html      site da Inovai — HTML puro, caminhos relativos, sem Jinja
+  css/styles.css
+  js/script.js    menu mobile, reveal on scroll, ano no rodapé
+  img/            vazio: falta a foto e os logos de clientes
+app.py            só desenvolvimento local — NÃO vai ao ar
+docs/futuro/      HTML de reserva, não publicado (seções de livro e cursos)
 requirements.txt
 .env.example      variáveis de ambiente esperadas (preencher .env local)
 .claude/launch.json  dev server na porta 5055
 ```
+
+Nada de Jinja em `public/index.html`: no Render é servido como arquivo estático,
+sem Python no meio. Se um dia precisar de template, o site volta a ser Web
+Service (US$ 7/mês) e o `app.py` já está pronto para isso.
 
 ## Site da Inovai
 
