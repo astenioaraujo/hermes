@@ -329,6 +329,10 @@ figure.hero__citacao figcaption span{
   .stats__grid{ grid-template-columns:repeat(2,1fr); }
 }
 
+@media (max-width:620px){
+  .logos{ grid-template-columns:repeat(2, 1fr); }
+}
+
 /* ---------- Citação de posicionamento ---------- */
 
 .quote-section{
@@ -397,8 +401,12 @@ figure.hero__citacao figcaption span{
 }
 
 .logos{
+  list-style:none;
+  margin:0;
+  padding:0;
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+  /* três colunas: são nove logos, fecha 3x3 sem linha órfã */
+  grid-template-columns:repeat(3, 1fr);
   gap:1px;
   background:var(--line);
   border:1px solid var(--line);
@@ -407,21 +415,23 @@ figure.hero__citacao figcaption span{
 }
 .logo{
   background:var(--bg);
-  min-height:118px;
+  min-height:132px;
   display:flex; align-items:center; justify-content:center;
-  padding:24px;
-  font-size:.8rem; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--text-faint);
+  padding:26px 30px;
   transition:background .35s var(--ease);
 }
 .logo:hover{ background:#fafafc; }
 .logo img{
-  max-height:38px; width:auto;
-  opacity:.65;
+  max-height:56px;
+  max-width:88%;   /* os horizontais crescem até aqui e ganham presença */
+  width:auto;
+  /* Em cinza e translúcidos eles convivem sem brigar entre si; a cor real
+     volta quando o cursor passa por cima. */
+  opacity:.72;
   filter:grayscale(1);
-  transition:opacity .35s var(--ease);
+  transition:opacity .35s var(--ease), filter .35s var(--ease);
 }
-.logo:hover img{ opacity:1; }
+.logo:hover img{ opacity:1; filter:none; }
 
 .testimonial{
   margin:clamp(48px,6vw,80px) auto 0;
