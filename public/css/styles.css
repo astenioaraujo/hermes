@@ -17,6 +17,10 @@
   --text-faint:    #86868b;
   --accent:        #0071e3;
 
+  /* Colhidos da própria arte do farol, para a citação conversar com ela */
+  --marinho:       #16304a;
+  --dourado:       #a17f45;
+
   --wrap:          1120px;
   --gutter:        clamp(20px, 5vw, 40px);
   --section-y:     clamp(88px, 13vw, 168px);
@@ -205,8 +209,44 @@ p:last-child{ margin-bottom:0; }
 }
 
 /* Citação de posicionamento, logo abaixo do farol */
-.hero__citacao{
-  margin-top:clamp(44px,5.5vw,72px);
+figure.hero__citacao{
+  margin:clamp(76px,9vw,124px) auto 0;
+  max-width:46rem;
+  text-align:left;
+  padding-left:clamp(22px,3vw,38px);
+  border-left:2px solid var(--dourado);
+}
+figure.hero__citacao blockquote{
+  font-family:"Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+              "Times New Roman", serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.32rem, 2.5vw, 1.95rem);
+  line-height:1.42;
+  letter-spacing:-.012em;
+  color:var(--marinho);
+  max-width:none;
+  margin:0;
+}
+figure.hero__citacao figcaption{
+  margin-top:26px;
+  text-align:left;
+}
+figure.hero__citacao figcaption strong{
+  font-family:inherit;
+  font-size:.92rem;
+  letter-spacing:.02em;
+  color:var(--marinho);
+}
+figure.hero__citacao figcaption span{
+  font-size:.82rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--dourado);
+}
+
+@media (max-width:600px){
+  figure.hero__citacao{ padding-left:18px; }
 }
 
 /* Farol, logo abaixo da chamada */
