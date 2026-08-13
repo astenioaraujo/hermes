@@ -420,9 +420,10 @@ p:last-child{ margin-bottom:0; }
 @media (max-width:900px){ .about{ grid-template-columns:1fr; } }
 
 .about__photo img{
-  width:100%; aspect-ratio:1/1;
+  width:100%; aspect-ratio:5/8;   /* proporção da foto: nada é cortado */
   border-radius:var(--radius);
   object-fit:cover;
+  background:var(--surface);
 }
 
 .creds{ list-style:none; margin:30px 0 0; padding:0; }
