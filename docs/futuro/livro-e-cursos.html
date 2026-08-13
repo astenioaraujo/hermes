@@ -1,0 +1,183 @@
+<!--
+  ARQUIVO DE RESERVA — não é publicado.
+
+  Seções de LIVRO e CURSOS removidas da home a pedido (a home é 100% consultoria).
+  Guardadas aqui inteiras para reaproveitar quando forem virar páginas próprias
+  (ex.: /livro e /cursos) ou voltar para a home.
+
+  O CSS delas também foi retirado do styles.css e está no fim deste arquivo.
+  Para reativar: cole o HTML em index.html e o CSS em styles.css.
+-->
+
+<!-- ============ LIVRO ============ -->
+<section class="section section--book" id="livro">
+  <div class="wrap book">
+    <div class="book__art reveal" aria-hidden="true">
+      <div class="book3d">
+        <div class="book3d__cover">
+          <span class="book3d__label">Astênio Araújo</span>
+          <span class="book3d__title">Título<br>do Livro</span>
+          <span class="book3d__rule"></span>
+          <span class="book3d__sub">subtítulo do livro aqui</span>
+        </div>
+        <div class="book3d__spine"></div>
+      </div>
+    </div>
+
+    <div class="book__copy">
+      <p class="eyebrow reveal">O livro</p>
+      <h2 class="reveal">[Título do livro]</h2>
+      <p class="lead reveal">[Subtítulo em uma linha — a promessa central do livro.]</p>
+      <p class="reveal">[Dois ou três períodos sobre o que o leitor leva daqui.]</p>
+      <ul class="ticks reveal">
+        <li>[Benefício concreto 1]</li>
+        <li>[Benefício concreto 2]</li>
+        <li>[Benefício concreto 3]</li>
+      </ul>
+      <div class="buyline reveal">
+        <a class="btn btn--primary" href="#contato">Comprar — R$ XX,XX</a>
+        <span class="buyline__note">Edição impressa e digital</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CURSOS ============ -->
+<section class="section" id="cursos">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow reveal">Cursos</p>
+      <h2 class="reveal">Método aplicado,<br>direto do campo.</h2>
+      <p class="lead reveal">Nada de teoria solta. Cada aula sai de um problema que eu já resolvi dentro de uma empresa real.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal">
+        <span class="card__tag">Online · ao vivo</span>
+        <h3>[Nome do curso 1]</h3>
+        <p>[Uma frase sobre para quem é e o que a pessoa sai sabendo fazer.]</p>
+        <ul class="card__meta"><li>XX horas</li><li>Certificado</li></ul>
+        <div class="card__foot">
+          <span class="price">R$ XXX</span>
+          <a class="link" href="#contato">Inscrever-se <span aria-hidden="true">›</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__tag">Gravado</span>
+        <h3>[Nome do curso 2]</h3>
+        <p>[Uma frase sobre para quem é e o que a pessoa sai sabendo fazer.]</p>
+        <ul class="card__meta"><li>XX horas</li><li>Acesso vitalício</li></ul>
+        <div class="card__foot">
+          <span class="price">R$ XXX</span>
+          <a class="link" href="#contato">Inscrever-se <span aria-hidden="true">›</span></a>
+        </div>
+      </article>
+
+      <article class="card card--wide reveal">
+        <span class="card__tag">Formação</span>
+        <h3>[Nome do curso 3]</h3>
+        <p>[Uma frase sobre para quem é e o que a pessoa sai sabendo fazer.]</p>
+        <ul class="card__meta"><li>XX semanas</li><li>Turma reduzida</li><li>Mentoria individual</li></ul>
+        <div class="card__foot">
+          <span class="price">R$ X.XXX</span>
+          <a class="link" href="#contato">Falar sobre a turma <span aria-hidden="true">›</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!--
+=====================================================================
+CSS correspondente (colar em styles.css ao reativar as seções acima)
+=====================================================================
+
+.section--book{
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(41,151,255,.10), transparent 70%),
+    var(--bg-alt);
+  border-block:1px solid var(--line);
+}
+
+.book{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1fr);
+  gap:clamp(48px,7vw,96px);
+  align-items:center;
+}
+@media (max-width:900px){
+  .book{ grid-template-columns:1fr; }
+  .book__art{ order:-1; }
+}
+
+.book__art{ display:flex; justify-content:center; perspective:1600px; }
+
+.book3d{
+  position:relative;
+  width:min(310px, 74vw);
+  aspect-ratio:2/3;
+  transform:rotateY(-19deg) rotateX(4deg);
+  transform-style:preserve-3d;
+  transition:transform .8s var(--ease);
+  filter:drop-shadow(-26px 34px 60px rgba(0,0,0,.75));
+}
+.book3d:hover{ transform:rotateY(-9deg) rotateX(2deg); }
+
+.book3d__cover{
+  position:absolute; inset:0;
+  border-radius:3px 8px 8px 3px;
+  background:linear-gradient(145deg,#26262b 0%,#131316 55%,#0c0c0e 100%);
+  border:1px solid rgba(255,255,255,.12);
+  padding:38px 30px;
+  display:flex; flex-direction:column;
+}
+.book3d__cover::after{
+  content:""; position:absolute; inset:0 auto 0 0; width:16px;
+  background:linear-gradient(90deg, rgba(255,255,255,.16), transparent);
+  border-radius:3px 0 0 3px;
+}
+.book3d__label{
+  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+.book3d__title{
+  margin-top:auto;
+  font-size:2rem; font-weight:600; line-height:1.05; letter-spacing:-.03em;
+}
+.book3d__rule{
+  display:block; width:44px; height:2px; background:var(--accent);
+  margin:18px 0 14px;
+}
+.book3d__sub{
+  font-size:.8rem; color:var(--text-dim); letter-spacing:0; line-height:1.4;
+}
+.book3d__spine{
+  position:absolute; top:0; bottom:0; left:0; width:24px;
+  background:linear-gradient(90deg,#000,#1a1a1d);
+  transform:rotateY(90deg) translateX(-12px);
+  transform-origin:left center;
+  border-radius:3px;
+}
+
+.ticks{ list-style:none; margin:28px 0; padding:0; }
+.ticks li{
+  position:relative;
+  padding:0 0 0 30px;
+  margin-bottom:13px;
+  color:var(--text-dim);
+}
+.ticks li::before{
+  content:""; position:absolute; left:2px; top:.55em;
+  width:9px; height:5px;
+  border-left:1.8px solid var(--accent);
+  border-bottom:1.8px solid var(--accent);
+  transform:rotate(-45deg);
+}
+
+.buyline{ display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; margin-top:36px; }
+.buyline__note{ font-size:.85rem; color:var(--text-faint); }
+
+.price{ font-size:1.3rem; font-weight:600; letter-spacing:-.03em; }
+
+-->

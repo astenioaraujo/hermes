@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inovai Consultoria — Consultoria financeira empresarial em Natal/RN</title>
+<meta name="description" content="Consultoria financeira para empresas. Planejamento, fluxo de caixa, políticas financeiras e gestão de custos. Do tumulto à estabilidade financeira, com Astênio Araújo.">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#topo">Inovai</a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#consultoria">Consultoria</a>
+      <a href="#metodo">Como funciona</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#sobre">Quem conduz</a>
+    </nav>
+
+    <a class="nav__cta" href="#contato">Falar com a Inovai</a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <div class="menu" id="navMenu" hidden>
+    <a href="#consultoria">Consultoria</a>
+    <a href="#metodo">Como funciona</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#sobre">Quem conduz</a>
+    <a href="#contato">Falar com a Inovai</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="wrap hero__inner">
+      <p class="eyebrow reveal">Consultoria financeira empresarial</p>
+      <h1 class="hero__title reveal">
+        Do tumulto à<br>estabilidade financeira.
+      </h1>
+      <p class="hero__sub reveal">
+        Cuidamos das suas finanças para que você possa cuidar
+        de coisas mais importantes.
+      </p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="#contato">Falar com a Inovai</a>
+        <a class="btn btn--ghost" href="#metodo">Como funciona <span aria-hidden="true">›</span></a>
+      </div>
+    </div>
+
+    <div class="hero__glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ NÚMEROS ============ -->
+  <section class="stats">
+    <div class="wrap stats__grid">
+      <div class="stat reveal"><strong>40</strong><span>anos de mercado</span></div>
+      <div class="stat reveal"><strong>100+</strong><span>ferramentas de gestão</span></div>
+      <div class="stat reveal"><strong>30+</strong><span>anos em multinacionais</span></div>
+      <div class="stat reveal"><strong>Natal</strong><span>RN · atendimento nacional</span></div>
+    </div>
+  </section>
+
+  <!-- ============ POSICIONAMENTO ============ -->
+  <section class="section quote-section">
+    <div class="wrap">
+      <figure class="quote">
+        <blockquote class="reveal">
+          Assim como navegadores experientes conduzem navios com segurança
+          em meio às tempestades, nossa consultoria financeira guia sua empresa
+          através das turbulências do mercado rumo ao sucesso financeiro.
+        </blockquote>
+        <figcaption class="reveal">
+          <strong>Astênio Araújo</strong>
+          <span>Fundador e CEO da Inovai</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CONSULTORIA / SERVIÇOS ============ -->
+  <section class="section section--alt" id="consultoria">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow reveal">O que fazemos</p>
+        <h2 class="reveal">Sete frentes.<br>Uma empresa<br>de cada vez.</h2>
+        <p class="lead reveal">
+          Mais de cem ferramentas administrativas exclusivas, testadas em problemas
+          reais de empresas reais. Nada de modelo de prateleira.
+        </p>
+      </header>
+
+      <ol class="services">
+        <li class="reveal"><span>01</span><h3>Planejamento financeiro</h3><p>Projeção de receitas e despesas com cenários que sobrevivem ao mês seguinte.</p></li>
+        <li class="reveal"><span>02</span><h3>Estruturação do fluxo de caixa</h3><p>Do zero: contas, categorias, ritmo e responsáveis definidos.</p></li>
+        <li class="reveal"><span>03</span><h3>Políticas financeiras</h3><p>Regras escritas para prazo, crédito, compra e aprovação.</p></li>
+        <li class="reveal"><span>04</span><h3>Acompanhamento diário</h3><p>Alguém olhando o caixa todo dia — não só no fechamento do mês.</p></li>
+        <li class="reveal"><span>05</span><h3>Análise de variáveis</h3><p>O que de fato move o resultado, separado do que só faz barulho.</p></li>
+        <li class="reveal"><span>06</span><h3>Projeções e previsões</h3><p>Antecipar o aperto com meses de folga para reagir.</p></li>
+        <li class="reveal"><span>07</span><h3>Gestão de custos</h3><p>Corte com bisturi, não com machado.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ MÉTODO ============ -->
+  <section class="section" id="metodo">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow reveal">Como funciona</p>
+        <h2 class="reveal">Três etapas,<br>sem mistério.</h2>
+        <p class="lead reveal">[Confirme os prazos e o formato de cada etapa — escrevi uma versão de partida.]</p>
+      </header>
+
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step__num">01</span>
+          <h3>Diagnóstico</h3>
+          <p>
+            Entramos na sua operação e olhamos os números como eles são, não como
+            o relatório diz que são. Ao fim, você recebe um retrato honesto da situação
+            e a lista do que precisa mudar primeiro.
+          </p>
+          <p class="step__meta">[XX semanas]</p>
+        </article>
+
+        <article class="step reveal">
+          <span class="step__num">02</span>
+          <h3>Estruturação</h3>
+          <p>
+            Montamos o fluxo de caixa, as políticas e os controles que faltavam,
+            junto com a sua equipe — para que continuem funcionando depois que a
+            gente sair.
+          </p>
+          <p class="step__meta">[XX semanas]</p>
+        </article>
+
+        <article class="step reveal">
+          <span class="step__num">03</span>
+          <h3>Acompanhamento</h3>
+          <p>
+            Ficamos ao lado da gestão no dia a dia, com reuniões de rotina e leitura
+            constante dos indicadores. É aqui que a estabilidade vira hábito.
+          </p>
+          <p class="step__meta">[contrato mensal]</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTES ============ -->
+  <section class="section section--alt" id="clientes">
+    <div class="wrap">
+      <header class="section__head section__head--center">
+        <p class="eyebrow reveal">Clientes</p>
+        <h2 class="reveal">Empresas que já<br>passaram pela tempestade.</h2>
+      </header>
+
+      <!-- Troque cada div por: <img src="logos/cliente.svg" alt="Nome do cliente"> -->
+      <div class="logos">
+        <div class="logo reveal">logo 1</div>
+        <div class="logo reveal">logo 2</div>
+        <div class="logo reveal">logo 3</div>
+        <div class="logo reveal">logo 4</div>
+        <div class="logo reveal">logo 5</div>
+        <div class="logo reveal">logo 6</div>
+      </div>
+
+      <figure class="testimonial reveal">
+        <blockquote>[Depoimento de um cliente — duas ou três linhas sobre o que mudou na empresa depois da consultoria.]</blockquote>
+        <figcaption><strong>[Nome]</strong><span>[Cargo, Empresa]</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ QUEM CONDUZ ============ -->
+  <section class="section" id="sobre">
+    <div class="wrap about">
+      <div class="about__photo reveal">
+        <!-- Troque por: <img src="astenio.jpg" alt="Astênio Araújo"> -->
+        <div class="photo-placeholder">
+          <span>AA</span>
+          <small>foto sua aqui</small>
+        </div>
+      </div>
+
+      <div class="about__copy">
+        <p class="eyebrow reveal">Quem conduz</p>
+        <h2 class="reveal">Astênio Araújo</h2>
+        <p class="lead reveal">
+          Fundador e presidente da Inovai Consultoria Empresarial. Ex-CIO da Alesat.
+          Mais de 30 anos como executivo em corporações nacionais e multinacionais —
+          Coats, Philips e Alesat.
+        </p>
+        <p class="reveal">
+          Consultor em estratégia, posicionamento, gestão, finanças e TI. Membro de
+          conselhos, comentarista e colunista de veículos corporativos, palestrante e
+          professor de pós-graduação na UFRN.
+        </p>
+        <ul class="creds reveal">
+          <li>Especialista em Estratégia e Gestão — Amana-Key</li>
+          <li>Especialista em Estratégia Empresarial — Fundação Dom Cabral</li>
+          <li>Especialista em Administração Financeira</li>
+          <li>Practitioner e Master Practitioner em PNL</li>
+          <li>Analista de Sistemas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section closing" id="contato">
+    <div class="wrap closing__inner">
+      <h2 class="reveal">Vamos conversar<br>sobre a sua empresa.</h2>
+      <p class="lead reveal">Uma conversa de trinta minutos costuma bastar para saber se faz sentido seguir.</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="https://wa.me/558432113414" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn--ghost" href="mailto:contato@inovai.com.br">contato@inovai.com.br</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <div class="foot__brand">
+      <strong>Inovai</strong>
+      <span>Consultoria Empresarial Ltda.</span>
+    </div>
+    <address class="foot__contact">
+      Rua Ipanguassú, 1123 — Tirol<br>
+      Natal · RN<br>
+      <a href="tel:+558432113414">+55 84 3211-3414</a><br>
+      <a href="mailto:contato@inovai.com.br">contato@inovai.com.br</a>
+    </address>
+    <nav class="foot__links" aria-label="Rodapé">
+      <a href="#consultoria">Consultoria</a>
+      <a href="#metodo">Como funciona</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#sobre">Quem conduz</a>
+    </nav>
+  </div>
+  <div class="wrap foot__base">
+    <small>© <span id="ano">2026</span> Inovai Consultoria Empresarial Ltda. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
