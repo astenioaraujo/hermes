@@ -419,11 +419,14 @@ p:last-child{ margin-bottom:0; }
 }
 @media (max-width:900px){ .about{ grid-template-columns:1fr; } }
 
+.about__photo{ align-self:center; }
+.about__photo picture{ display:block; }
 .about__photo img{
-  width:100%; aspect-ratio:5/8;   /* proporção da foto: nada é cortado */
+  /* Sem aspect-ratio e sem cover: a imagem manda na própria proporção,
+     então nada é recortado, seja a foto quadrada ou de corpo inteiro. */
+  width:100%;
+  height:auto;
   border-radius:var(--radius);
-  object-fit:cover;
-  background:var(--surface);
 }
 
 .creds{ list-style:none; margin:30px 0 0; padding:0; }
