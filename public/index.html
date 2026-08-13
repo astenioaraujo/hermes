@@ -18,7 +18,6 @@
     <nav class="nav__links" aria-label="Principal">
       <a href="#consultoria">Consultoria</a>
       <a href="#metodo">Como funciona</a>
-      <a href="#clientes">Clientes</a>
       <a href="#sobre">Quem conduz</a>
     </nav>
 
@@ -32,7 +31,6 @@
   <div class="menu" id="navMenu" hidden>
     <a href="#consultoria">Consultoria</a>
     <a href="#metodo">Como funciona</a>
-    <a href="#clientes">Clientes</a>
     <a href="#sobre">Quem conduz</a>
     <a href="#contato">Falar com a Inovai</a>
   </div>
@@ -157,6 +155,12 @@
     </div>
   </section>
 
+<!--
+  SEÇÃO DE CLIENTES — escondida em 12/08/2026, à espera de logos e de um
+  depoimento reais. Para reativar: apague este comentário de abertura e o de
+  fechamento, e devolva "Clientes" aos dois menus lá em cima.
+-->
+<!--
   <!-- ============ CLIENTES ============ -->
   <section class="section section--alt" id="clientes">
     <div class="wrap">
@@ -182,15 +186,17 @@
     </div>
   </section>
 
+-->
+
   <!-- ============ QUEM CONDUZ ============ -->
   <section class="section" id="sobre">
     <div class="wrap about">
       <div class="about__photo reveal">
-        <!-- Troque por: <img src="astenio.jpg" alt="Astênio Araújo"> -->
-        <div class="photo-placeholder">
-          <span>AA</span>
-          <small>foto sua aqui</small>
-        </div>
+        <picture>
+          <source srcset="img/astenio.webp" type="image/webp">
+          <img src="img/astenio.jpg" width="1000" height="1000" loading="lazy"
+               alt="Astênio Araújo, fundador da Inovai Consultoria">
+        </picture>
       </div>
 
       <div class="about__copy">
@@ -256,7 +262,6 @@
     <nav class="foot__links" aria-label="Rodapé">
       <a href="#consultoria">Consultoria</a>
       <a href="#metodo">Como funciona</a>
-      <a href="#clientes">Clientes</a>
       <a href="#sobre">Quem conduz</a>
     </nav>
   </div>
