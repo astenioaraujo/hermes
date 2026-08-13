@@ -312,7 +312,7 @@ figure.hero__citacao figcaption span{
 }
 .stats__grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);   /* três números desde a saída de "Natal" */
   gap:36px 24px;
 }
 .stat{ text-align:center; }
