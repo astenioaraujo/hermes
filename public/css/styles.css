@@ -204,6 +204,11 @@ p:last-child{ margin-bottom:0; }
   margin-top:36px;
 }
 
+/* Citação de posicionamento, logo abaixo do farol */
+.hero__citacao{
+  margin-top:clamp(44px,5.5vw,72px);
+}
+
 /* Farol, logo abaixo da chamada */
 .hero__farol{
   margin:clamp(36px,4.5vw,56px) 0 0;
@@ -297,19 +302,19 @@ p:last-child{ margin-bottom:0; }
   border-bottom:1px solid var(--line);
 }
 .quote{
+  /* Nada de max-width em ch aqui: 'ch' se mede pela fonte deste elemento
+     (17px), não pela do texto grande lá dentro — o limite virava ~190px e
+     a citação descia em coluna, quase uma palavra por linha. */
   margin:0;
-  max-width:22ch;
-  margin-inline:auto;
   text-align:center;
 }
 .quote blockquote{
-  margin:0;
-  font-size:clamp(1.6rem, 3.6vw, 2.6rem);
+  margin:0 auto;
+  font-size:clamp(1.5rem, 3.2vw, 2.4rem);
   font-weight:600;
-  line-height:1.22;
+  line-height:1.25;
   letter-spacing:-.03em;
-  max-width:20ch;
-  margin-inline:auto;
+  max-width:26ch;   /* medido na fonte grande do próprio blockquote */
 }
 .quote figcaption{
   margin-top:32px;

@@ -3,6 +3,35 @@
 (function () {
   'use strict';
 
+  /* ---------- A página sempre abre no topo ----------
+     Duas coisas faziam o site abrir no meio ao recarregar: o navegador
+     restaura sozinho a posição de rolagem anterior, e o clique no menu deixa
+     uma âncora (#consultoria) na URL, que o navegador persegue no reload. */
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  if (window.location.hash) {
+    // tira a âncora da URL sem recarregar nem criar entrada no histórico
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+
+  window.scrollTo(0, 0);
+
+  /* O 'load' só dispara depois das imagens, e até lá a pessoa já pode ter
+     clicado no menu ou rolado. Forçar o topo ali cegamente a arrancaria do
+     lugar, então só reforçamos enquanto ninguém tiver mexido na página. */
+  var mexeu = false;
+  function marcarInteracao() { mexeu = true; }
+  ['wheel', 'touchstart', 'keydown', 'click'].forEach(function (evento) {
+    window.addEventListener(evento, marcarInteracao, { passive: true, once: true });
+  });
+
+  window.addEventListener('load', function () {
+    if (!mexeu && window.scrollY < 200) window.scrollTo(0, 0);
+  });
+
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
@@ -51,6 +80,20 @@
 
     items.forEach(function (el) { io.observe(el); });
   }
+
+  /* Links internos rolam suavemente, mas sem gravar a âncora na URL —
+     assim um recarregamento depois continua abrindo no topo. */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!link) return;
+    var destino = document.querySelector(link.getAttribute('href'));
+    if (!destino) return;
+    e.preventDefault();
+    destino.scrollIntoView({
+      behavior: reduced ? 'auto' : 'smooth',
+      block: 'start'
+    });
+  });
 
   document.getElementById('ano').textContent = new Date().getFullYear();
 
