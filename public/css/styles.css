@@ -363,6 +363,86 @@ figure.hero__citacao figcaption span{
 
 /* ---------- Método (etapas) ---------- */
 
+/* Desenho do fluxo — arte no desktop, linha do tempo no celular */
+.fluxo-arte{
+  margin:clamp(8px,2.5vw,24px) 0 clamp(40px,5vw,64px);
+}
+.fluxo-arte img{
+  width:100%; height:auto;
+  border-radius:var(--radius);
+}
+
+.fluxo{
+  margin:clamp(8px,2.5vw,24px) 0 clamp(40px,5vw,64px);
+  display:none;                 /* no desktop quem aparece é a arte */
+}
+@media (max-width:760px){
+  .fluxo-arte{ display:none; }  /* a arte fica ilegível estreita demais */
+  .fluxo{ display:block; }
+}
+.fluxo__linha{
+  list-style:none; margin:0; padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  position:relative;
+}
+/* o trilho: sai do centro do 1º ponto e morre no centro do 3º */
+.fluxo__linha::before{
+  content:"";
+  position:absolute;
+  top:17px; left:16.666%; right:16.666%;
+  height:1.5px;
+  background:linear-gradient(90deg, var(--line-strong), var(--accent));
+}
+.fluxo__no{
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+  padding-inline:8px;
+  position:relative;
+}
+.fluxo__ponto{
+  width:34px; height:34px; border-radius:50%;
+  display:grid; place-items:center;
+  background:var(--bg); border:1.5px solid var(--line-strong);
+  color:var(--text-dim);
+  font-size:.68rem; font-weight:600; letter-spacing:.08em;
+  position:relative; z-index:1;
+  transition:border-color .35s var(--ease), color .35s var(--ease);
+}
+.fluxo__no:last-child .fluxo__ponto{ border-color:var(--accent); color:var(--accent); }
+.fluxo__rotulo{
+  margin-top:14px;
+  font-size:.95rem; font-weight:600;
+}
+.fluxo__nota{
+  margin-top:4px;
+  font-size:.82rem; color:var(--text-faint);
+}
+.fluxo__escala{
+  display:flex; justify-content:space-between;
+  margin:18px 0 0;
+  font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+
+@media (max-width:860px){
+  .fluxo__linha{ grid-template-columns:1fr; gap:28px; }
+  /* no empilhado o trilho vira vertical, alinhado ao centro dos pontos */
+  .fluxo__linha::before{
+    top:17px; bottom:17px; height:auto;
+    left:17px; right:auto; width:1.5px;
+    background:linear-gradient(180deg, var(--line-strong), var(--accent));
+  }
+  .fluxo__no{
+    flex-direction:row; align-items:center;
+    text-align:left; gap:16px; padding-inline:0;
+  }
+  .fluxo__ponto{ flex:0 0 34px; }
+  .fluxo__rotulo, .fluxo__nota{ margin-top:0; }
+  .fluxo__nota{ margin-left:auto; }
+  .fluxo__escala{ display:none; }
+}
+
 .steps{
   display:grid;
   grid-template-columns:repeat(3,1fr);
