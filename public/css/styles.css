@@ -433,6 +433,12 @@ figure.hero__citacao figcaption span{
 }
 .logo:hover img{ opacity:1; filter:none; }
 
+/* Logo com fundo colorido chapado (Rede Lucena): fica sempre em cinza, também
+   no hover — um retângulo verde inteiro aceso destoaria dos outros, que são
+   recortados. O texto do logo é branco e depende desse fundo para existir. */
+.logo--chapado img{ opacity:.62; }
+.logo--chapado:hover img{ opacity:.62; filter:grayscale(1); }
+
 .testimonial{
   margin:clamp(48px,6vw,80px) auto 0;
   max-width:64ch;
