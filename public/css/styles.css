@@ -1,21 +1,21 @@
 /* =========================================================
    Astênio Araújo / Inovai — protótipo
-   Paleta e ritmo tipográfico inspirados no padrão Apple:
-   preto profundo, texto claro, tipografia grande, muito ar.
+   Paleta e ritmo tipográfico no padrão Apple: fundo claro, texto quase
+   preto, azul como único acento, tipografia grande e muito ar.
    ========================================================= */
 
 :root{
-  --bg:            #000;
-  --bg-alt:        #0a0a0b;
-  --surface:       #141416;
-  --surface-2:     #1c1c1f;
-  --line:          rgba(255,255,255,.10);
-  --line-strong:   rgba(255,255,255,.22);
+  --bg:            #fff;
+  --bg-alt:        #f5f5f7;
+  --surface:       #fff;
+  --surface-2:     #f5f5f7;
+  --line:          rgba(0,0,0,.10);
+  --line-strong:   rgba(0,0,0,.22);
 
-  --text:          #f5f5f7;
-  --text-dim:      #a1a1a6;
-  --text-faint:    #6e6e73;
-  --accent:        #2997ff;
+  --text:          #1d1d1f;
+  --text-dim:      #6e6e73;
+  --text-faint:    #86868b;
+  --accent:        #0071e3;
 
   --wrap:          1120px;
   --gutter:        clamp(20px, 5vw, 40px);
@@ -32,7 +32,7 @@
 
 [hidden]{ display:none !important; }
 
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; color-scheme:light; }
 
 body{
   margin:0;
@@ -60,7 +60,7 @@ a{ color:inherit; text-decoration:none; }
 
 .skip{
   position:absolute; left:-9999px; top:0; z-index:100;
-  background:#fff; color:#000; padding:12px 18px; border-radius:0 0 10px 0;
+  background:#1d1d1f; color:#fff; padding:12px 18px; border-radius:0 0 10px 0;
 }
 .skip:focus{ left:0; }
 
@@ -99,13 +99,13 @@ p:last-child{ margin-bottom:0; }
 
 .nav{
   position:fixed; inset:0 0 auto 0; z-index:60;
-  background:rgba(0,0,0,.55);
+  background:rgba(255,255,255,.72);
   backdrop-filter:saturate(180%) blur(22px);
   -webkit-backdrop-filter:saturate(180%) blur(22px);
   border-bottom:1px solid transparent;
   transition:border-color .35s var(--ease), background .35s var(--ease);
 }
-.nav.is-stuck{ border-bottom-color:var(--line); background:rgba(0,0,0,.78); }
+.nav.is-stuck{ border-bottom-color:var(--line); background:rgba(255,255,255,.88); }
 
 .nav__inner{
   max-width:var(--wrap);
@@ -137,7 +137,7 @@ p:last-child{ margin-bottom:0; }
 .nav__cta{
   font-size:.82rem; font-weight:500;
   padding:7px 15px; border-radius:980px;
-  background:#fff; color:#000;
+  background:var(--accent); color:#fff;
   transition:opacity .25s var(--ease);
 }
 .nav__cta:hover{ opacity:.82; }
@@ -211,8 +211,8 @@ p:last-child{ margin-bottom:0; }
   top:-30%; left:50%; transform:translateX(-50%);
   width:min(1200px, 140vw); aspect-ratio:1;
   background:radial-gradient(circle at 50% 50%,
-    rgba(41,151,255,.16) 0%,
-    rgba(41,151,255,.05) 34%,
+    rgba(0,113,227,.10) 0%,
+    rgba(0,113,227,.03) 34%,
     transparent 62%);
   pointer-events:none;
 }
@@ -226,13 +226,14 @@ p:last-child{ margin-bottom:0; }
   padding:13px 26px;
   transition:transform .25s var(--ease), opacity .25s var(--ease), background .25s var(--ease);
 }
-.btn--primary{ background:#fff; color:#000; }
+.btn--primary{ background:var(--accent); color:#fff; }
 .btn--primary:hover{ transform:translateY(-1px); opacity:.88; }
 
 .btn--ghost{
   color:var(--accent);
-  padding:13px 4px;
+  border:1px solid var(--accent);
 }
+.btn--ghost:hover{ background:rgba(0,113,227,.06); }
 .btn--ghost span{ transition:transform .25s var(--ease); display:inline-block; }
 .btn--ghost:hover span{ transform:translateX(3px); }
 
@@ -316,16 +317,16 @@ p:last-child{ margin-bottom:0; }
 }
 
 .step{
-  background:var(--surface);
-  border:1px solid var(--line);
+  background:var(--bg-alt);
+  border:1px solid transparent;
   border-radius:var(--radius);
   padding:clamp(28px,3.4vw,40px);
   display:flex; flex-direction:column;
   transition:background .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
 }
 .step:hover{
-  background:var(--surface-2);
-  border-color:var(--line-strong);
+  background:#ececee;
+  border-color:var(--line);
   transform:translateY(-3px);
 }
 .step__num{
@@ -353,7 +354,7 @@ p:last-child{ margin-bottom:0; }
   overflow:hidden;
 }
 .logo{
-  background:var(--bg-alt);
+  background:var(--bg);
   min-height:118px;
   display:flex; align-items:center; justify-content:center;
   padding:24px;
@@ -361,11 +362,11 @@ p:last-child{ margin-bottom:0; }
   color:var(--text-faint);
   transition:background .35s var(--ease);
 }
-.logo:hover{ background:var(--surface); }
+.logo:hover{ background:#fafafc; }
 .logo img{
   max-height:38px; width:auto;
   opacity:.65;
-  filter:grayscale(1) brightness(2.4);
+  filter:grayscale(1);
   transition:opacity .35s var(--ease);
 }
 .logo:hover img{ opacity:1; }
@@ -403,11 +404,11 @@ p:last-child{ margin-bottom:0; }
   overflow:hidden;
 }
 .services li{
-  background:var(--bg-alt);
+  background:var(--bg);
   padding:clamp(28px,3.2vw,38px);
   transition:background .35s var(--ease);
 }
-.services li:hover{ background:var(--surface); }
+.services li:hover{ background:#fafafc; }
 .services span{
   font-size:.75rem; font-weight:600; letter-spacing:.14em;
   color:var(--accent);
@@ -449,7 +450,7 @@ p:last-child{ margin-bottom:0; }
 .closing{
   text-align:center;
   background:
-    radial-gradient(ellipse 70% 90% at 50% 100%, rgba(41,151,255,.13), transparent 70%),
+    radial-gradient(ellipse 70% 90% at 50% 100%, rgba(0,113,227,.08), transparent 70%),
     var(--bg);
   border-top:1px solid var(--line);
 }
