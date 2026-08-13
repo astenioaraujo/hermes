@@ -78,8 +78,9 @@ Ainda tem placeholders entre colchetes no HTML, aguardando conteúdo real: prazo
 das etapas do método (`[XX semanas]`), logos de clientes, um depoimento e a foto
 do Astênio. Não inventar esses valores.
 
-Contato: WhatsApp (84) 3211-3414, e-mail contato@inovai.com.br e Instagram
-@astenioaraujo — links diretos, sem formulário. O formulário chegou a ser feito
+Contato: telefone (84) 3211-3414 (fixo, não é WhatsApp), e-mail
+contato@inovai.com.br e Instagram @astenioaraujo — links diretos, sem
+formulário. O formulário chegou a ser feito
 e foi suspenso; está guardado em `docs/futuro/formulario-contato/` com o passo a
 passo para religar. Enquanto não houver formulário, o site é Static Site e não
 custa nada.
