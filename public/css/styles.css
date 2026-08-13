@@ -183,7 +183,7 @@ p:last-child{ margin-bottom:0; }
 
 .hero{
   position:relative;
-  padding:132px 0 clamp(72px,9vw,110px);
+  padding:92px 0 clamp(72px,9vw,110px);
   overflow:hidden;
 }
 
@@ -204,9 +204,9 @@ p:last-child{ margin-bottom:0; }
   margin-top:36px;
 }
 
-/* Imagem de abertura, logo abaixo da chamada */
+/* Imagem de abertura: primeira coisa da página, antes da chamada */
 .hero__midia{
-  margin-top:clamp(44px,5.5vw,68px);
+  margin-bottom:clamp(56px,7vw,88px);
   text-align:left;
 }
 
