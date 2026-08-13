@@ -301,7 +301,7 @@
       })
       .catch(function () {
         aviso.textContent = 'Não foi possível enviar agora. Se preferir, ligue para ' +
-          '(84) 3211-3414 ou fale no Telegram @astenioaraujo.';
+          '(84) 3211-3414.';
         aviso.hidden = false;
         btn.disabled = false;
         btn.textContent = 'Enviar solicitação';
