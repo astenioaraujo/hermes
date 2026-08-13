@@ -328,10 +328,6 @@ p:last-child{ margin-bottom:0; }
 }
 .step h3{ margin-bottom:14px; }
 .step p{ color:var(--text-dim); font-size:.97rem; }
-.step__meta{
-  margin-top:auto; padding-top:22px;
-  font-size:.82rem; color:var(--text-faint);
-}
 
 /* ---------- Clientes ---------- */
 
