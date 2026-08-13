@@ -20,6 +20,7 @@
   /* Colhidos da própria arte do farol, para a citação conversar com ela */
   --marinho:       #16304a;
   --dourado:       #a17f45;
+  --vinho:         #7b1f36;
 
   --wrap:          1120px;
   --gutter:        clamp(20px, 5vw, 40px);
@@ -84,12 +85,12 @@ p{ margin:0 0 1.1em; }
 p:last-child{ margin-bottom:0; }
 
 .eyebrow{
-  font-size:.8rem;
-  font-weight:600;
-  letter-spacing:.14em;
+  font-size:clamp(1rem, 1.5vw, 1.18rem);
+  font-weight:700;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  color:var(--text-faint);
-  margin:0 0 22px;
+  color:var(--vinho);
+  margin:0 0 26px;
 }
 
 .lead{
@@ -193,14 +194,6 @@ p:last-child{ margin-bottom:0; }
 
 .hero__inner{ position:relative; z-index:2; text-align:center; }
 
-.hero__sub{
-  max-width:34ch;
-  margin:30px auto 0;
-  font-size:clamp(1.1rem, 2.1vw, 1.45rem);
-  line-height:1.45;
-  color:var(--text-dim);
-  letter-spacing:-.018em;
-}
 
 .hero__actions{
   display:flex; flex-wrap:wrap; gap:14px 26px;
