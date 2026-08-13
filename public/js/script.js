@@ -53,4 +53,68 @@
   }
 
   document.getElementById('ano').textContent = new Date().getFullYear();
+
+  /* ---------- Carrossel de produtos ---------- */
+
+  var trilha = document.getElementById('carrosselTrilha');
+  if (!trilha) return;
+
+  var slides = trilha.children;
+  var pontos = document.getElementById('carrosselPontos').children;
+  var atual = 0;
+  var total = slides.length;
+
+  function mostrar(i) {
+    atual = (i + total) % total;
+    trilha.style.transform = 'translateX(' + (-atual * 100) + '%)';
+    for (var p = 0; p < pontos.length; p++) {
+      pontos[p].setAttribute('aria-selected', String(p === atual));
+    }
+    // Só o slide visível recebe foco na navegação por teclado
+    for (var s = 0; s < total; s++) {
+      slides[s].setAttribute('aria-hidden', String(s !== atual));
+    }
+  }
+
+  document.getElementById('carrosselProximo')
+    .addEventListener('click', function () { mostrar(atual + 1); parar(); });
+  document.getElementById('carrosselAnterior')
+    .addEventListener('click', function () { mostrar(atual - 1); parar(); });
+
+  for (var i = 0; i < pontos.length; i++) {
+    (function (indice) {
+      pontos[indice].addEventListener('click', function () { mostrar(indice); parar(); });
+    })(i);
+  }
+
+  /* Setas do teclado quando o carrossel está em foco */
+  trilha.parentNode.parentNode.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { mostrar(atual + 1); parar(); }
+    if (e.key === 'ArrowLeft') { mostrar(atual - 1); parar(); }
+  });
+
+  /* Arrastar com o dedo */
+  var inicioX = null;
+  trilha.addEventListener('touchstart', function (e) {
+    inicioX = e.touches[0].clientX;
+  }, { passive: true });
+  trilha.addEventListener('touchend', function (e) {
+    if (inicioX === null) return;
+    var distancia = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(distancia) > 45) { mostrar(atual + (distancia < 0 ? 1 : -1)); parar(); }
+    inicioX = null;
+  });
+
+  /* Avanço automático, interrompido assim que a pessoa assume o controle */
+  var relogio = null;
+  function parar() {
+    if (relogio) { clearInterval(relogio); relogio = null; }
+  }
+  if (!reduced) {
+    relogio = setInterval(function () { mostrar(atual + 1); }, 7000);
+    var palco = trilha.parentNode;
+    palco.addEventListener('mouseenter', parar);
+  }
+
+  mostrar(0);
 })();

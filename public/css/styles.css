@@ -483,6 +483,101 @@ p:last-child{ margin-bottom:0; }
   border-top:1px solid var(--line);
 }
 
+/* ---------- Carrossel de produtos ---------- */
+
+.carrossel{ position:relative; }
+
+.carrossel__palco{
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:var(--bg-alt);
+}
+
+.carrossel__trilha{
+  list-style:none; margin:0; padding:0;
+  display:flex;
+  transition:transform .6s var(--ease);
+}
+@media (prefers-reduced-motion:reduce){
+  .carrossel__trilha{ transition:none; }
+}
+
+.slide{
+  flex:0 0 100%;
+  min-width:0;
+}
+.slide img,
+.slide__vazio{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+}
+.slide__vazio{
+  display:flex; align-items:center; justify-content:center;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(0,0,0,.02) 0 12px, transparent 12px 24px),
+    var(--bg-alt);
+  border-bottom:1px solid var(--line);
+}
+.slide__vazio span{
+  font-size:.85rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+
+.slide__texto{
+  background:var(--bg);
+  padding:clamp(24px,3vw,34px) clamp(24px,3.4vw,40px);
+}
+.slide__texto h3{ margin-bottom:10px; font-size:clamp(1.2rem,2.2vw,1.5rem); }
+.slide__texto p{ color:var(--text-dim); font-size:.97rem; max-width:62ch; }
+
+/* Setas */
+.carrossel__seta{
+  position:absolute; top:calc(50% - 60px);
+  transform:translateY(-50%);
+  width:44px; height:44px;
+  display:flex; align-items:center; justify-content:center;
+  border:0; border-radius:50%;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 2px 12px rgba(0,0,0,.14);
+  color:var(--text);
+  font-size:1.6rem; line-height:1;
+  cursor:pointer;
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+}
+.carrossel__seta:hover{ transform:translateY(-50%) scale(1.06); }
+.carrossel__seta--anterior{ left:14px; }
+.carrossel__seta--proximo{ right:14px; }
+.carrossel__seta span{ margin-top:-3px; }
+
+/* Pontos */
+.carrossel__pontos{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px;
+  margin-top:24px;
+}
+.carrossel__pontos button{
+  width:8px; height:8px; padding:0;
+  border:0; border-radius:50%;
+  background:var(--line-strong);
+  cursor:pointer;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+}
+.carrossel__pontos button[aria-selected="true"]{
+  background:var(--accent);
+  transform:scale(1.35);
+}
+
+@media (max-width:600px){
+  .carrossel__seta{ width:38px; height:38px; font-size:1.35rem; }
+  .carrossel__seta--anterior{ left:8px; }
+  .carrossel__seta--proximo{ right:8px; }
+}
+
 /* ---------- Contatos ---------- */
 
 .contatos{
