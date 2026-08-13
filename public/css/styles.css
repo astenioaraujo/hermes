@@ -521,11 +521,17 @@ p:last-child{ margin-bottom:0; }
   flex:0 0 100%;
   min-width:0;
 }
-.slide img,
+.slide img{
+  /* height:auto é obrigatório: sem ele a altura fica valendo o atributo
+     height="900" do HTML, o aspect-ratio é ignorado e o object-fit recorta
+     as laterais — foi o que cortava a imagem no celular. */
+  width:100%;
+  height:auto;
+  display:block;
+}
 .slide__vazio{
   width:100%;
   aspect-ratio:16/9;
-  object-fit:cover;
   display:block;
 }
 .slide__vazio{
