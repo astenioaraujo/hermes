@@ -901,8 +901,237 @@ figure.hero__citacao figcaption span{
 }
 .form__ok p{ margin:0; color:var(--text-dim); }
 
+/* select e arquivo herdam a mesma caixa dos demais campos */
+.field select{
+  width:100%;
+  font:inherit;
+  font-size:1rem;
+  color:var(--text);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  appearance:none;
+  transition:border-color .2s var(--ease), background .2s var(--ease);
+}
+.field select:focus,
+.field input[type="file"]:focus{
+  outline:none;
+  background:var(--surface-2);
+  border-color:var(--line-strong);
+  box-shadow:0 0 0 3px rgba(0,113,227,.22);
+}
+.field select[aria-invalid="true"],
+.field input[type="file"][aria-invalid="true"]{ border-color:var(--vinho); }
+.field input[type="file"]{
+  padding:12px 16px;
+  font-size:.92rem;
+  color:var(--text-dim);
+  cursor:pointer;
+}
+.field input[type="file"]::file-selector-button{
+  font:inherit; font-size:.86rem;
+  margin-right:14px;
+  padding:8px 14px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--text);
+  cursor:pointer;
+}
+
 @media (max-width:680px){
   .form__grid{ grid-template-columns:1fr; }
   .form__acoes .btn{ width:100%; text-align:center; }
+}
+
+/* ---------- Página do livro ---------- */
+
+/* Slide que leva a uma página: o cartão inteiro é o link */
+.slide__link{ display:block; color:inherit; }
+.slide__mais{
+  display:inline-block;
+  margin-top:14px;
+  font-size:.92rem;
+  color:var(--accent);
+  transition:transform .25s var(--ease);
+}
+.slide__link:hover .slide__mais{ transform:translateX(3px); }
+
+/* O hero é a primeira tela: capa, título, botões e o começo da descrição
+   precisam caber nela. Daí o respiro menor em cima e nenhum embaixo — quem
+   dá o intervalo até a metodologia é a própria seção seguinte. */
+.livro-hero{
+  padding-top:clamp(88px,9vw,124px);
+  padding-bottom:0;
+}
+.livro-hero__inner{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(32px,5vw,64px);
+  align-items:center;
+}
+/* A capa manda na altura do hero: sem limite, ela sozinha empurra a
+   metodologia para fora da primeira tela em telas largas. */
+.livro-capa{ margin:0; max-width:320px; justify-self:end; }
+.livro-capa img{
+  /* height:auto é obrigatório: sem ele vale o atributo height do HTML e a
+     imagem estica (mesmo caso do .slide img). */
+  width:100%;
+  height:auto;
+  /* Capa chapada, direto da diagramação: sem sombra e sem canto arredondado.
+     Só o fio de 1px, porque a arte tem fundo branco igual ao da página e sem
+     ele o limite da capa sumiria. */
+  border:1px solid var(--line);
+}
+.livro-hero__texto h1{
+  font-size:clamp(2rem,5vw,3.2rem);
+  letter-spacing:-.03em;
+  line-height:1.06;
+  margin:0 0 14px;
+}
+.livro-acoes{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:clamp(18px,2.6vw,26px);
+}
+
+/* A metodologia entra logo abaixo dos botões, ainda na primeira tela */
+.livro-hero + .section{ padding-top:clamp(24px,3.5vw,44px); }
+
+.prosa{ max-width:760px; }
+.prosa h2{ margin-bottom:clamp(20px,3vw,28px); }
+
+.cores{
+  list-style:none;
+  margin:clamp(32px,5vw,48px) 0;
+  padding:0;
+  display:grid;
+  gap:18px;
+}
+.cores__item{
+  padding:clamp(20px,3vw,26px) clamp(22px,3vw,28px);
+  border:1px solid var(--line);
+  border-left:4px solid var(--line-strong);
+  border-radius:var(--radius);
+  background:var(--surface);
+}
+.cores__item h3{ margin:0 0 8px; font-size:1.1rem; }
+.cores__item p{ margin:0; color:var(--text-dim); }
+.cores__item--vermelho{ border-left-color:#c0392b; }
+.cores__item--vermelho h3{ color:#c0392b; }
+.cores__item--azul{ border-left-color:#1f5fa8; }
+.cores__item--azul h3{ color:#1f5fa8; }
+.cores__item--amarelo{ border-left-color:var(--dourado); }
+.cores__item--amarelo h3{ color:var(--dourado); }
+
+.quadro__titulo{ margin:clamp(36px,5vw,56px) 0 12px; }
+.quadro{
+  margin:clamp(20px,3vw,28px) 0 0;
+}
+.quadro img{
+  width:100%; height:auto;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  /* A arte tem fundo branco: o respiro interno vem do padding, não da arte */
+  padding:clamp(14px,2.5vw,26px);
+  background:var(--surface);
+}
+
+.pedido{
+  max-width:760px;
+  margin:clamp(32px,5vw,48px) auto 0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+  overflow:hidden;
+}
+.pedido__valores{
+  list-style:none; margin:0;
+  padding:clamp(22px,3vw,28px);
+}
+.pedido__valores li{
+  display:flex; justify-content:space-between; gap:16px;
+  padding:8px 0;
+  color:var(--text-dim);
+}
+.pedido__total{
+  border-top:1px solid var(--line);
+  margin-top:6px; padding-top:14px !important;
+  color:var(--text) !important;
+  font-size:1.05rem;
+}
+.pedido__pix{
+  padding:clamp(22px,3vw,28px);
+  background:var(--bg-alt);
+  border-left:1px solid var(--line);
+}
+.pedido__rotulo{
+  margin:0 0 8px;
+  font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+.pedido__qr{
+  margin:0 0 12px;
+  max-width:190px;
+}
+.pedido__qr img{
+  width:100%; height:auto;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:8px;
+  background:#fff;
+}
+/* Bloco do comprovante: o anexo saiu do formulário, então ele precisa ficar
+   visível o bastante para ninguém enviar o pedido e esquecer o comprovante. */
+.comprovante{
+  margin-top:clamp(20px,3vw,28px);
+  padding:clamp(18px,2.6vw,24px);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+}
+.comprovante__titulo{
+  margin:0 0 6px;
+  font-weight:600;
+}
+.comprovante__texto{
+  margin:0 0 14px;
+  font-size:.92rem;
+  color:var(--text-dim);
+}
+.comprovante__acao{
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px;
+}
+.comprovante__email{
+  font-size:1.05rem;
+  word-break:break-all;
+}
+
+.pedido__copiar{
+  margin-top:12px;
+  padding:9px 16px;
+  font:inherit; font-size:.88rem;
+  color:var(--accent);
+  background:var(--surface);
+  border:1px solid var(--line-strong);
+  border-radius:980px;
+  cursor:pointer;
+  transition:background .25s var(--ease);
+}
+.pedido__copiar:hover{ background:var(--bg-alt); }
+.pedido__nota{ margin:8px 0 0; font-size:.85rem; color:var(--text-dim); }
+
+@media (max-width:820px){
+  .livro-hero__inner{ grid-template-columns:1fr; gap:clamp(16px,3vw,24px); }
+  /* Numa coluna só, a capa inteira empurrava título e botões para fora da
+     tela — daí o limite menor aqui. */
+  .livro-capa{ max-width:186px; justify-self:start; }
+  .pedido{ grid-template-columns:1fr; }
+  .pedido__pix{ border-left:0; border-top:1px solid var(--line); }
 }
 

@@ -53,8 +53,10 @@ código versionado — só em variável de ambiente do lado servidor.
 ```
 public/           o que vai ao ar (Publish Directory do Static Site)
   index.html      site da Inovai — HTML puro, caminhos relativos, sem Jinja
+  livro.html      landing do livro (2º slide do carrossel aponta para cá)
   css/styles.css
-  js/script.js    menu mobile, reveal on scroll, ano no rodapé
+  js/script.js    menu mobile, reveal on scroll, carrossel, form de contato
+  js/livro.js     formulário de cópia autografada (só na livro.html)
   img/            vazio: falta a foto e os logos de clientes
 app.py            só desenvolvimento local — NÃO vai ao ar
 docs/futuro/      HTML de reserva, não publicado (seções de livro e cursos)
@@ -84,5 +86,36 @@ formulário. O formulário chegou a ser feito
 e foi suspenso; está guardado em `docs/futuro/formulario-contato/` com o passo a
 passo para religar. Enquanto não houver formulário, o site é Static Site e não
 custa nada.
+
+## Landing do livro (`public/livro.html`)
+
+"Os Vermelhos, os Amarelos e os Azuis — Inteligências Primárias". Entrou como
+2º slide do carrossel da home, e o slide inteiro é link para a página.
+
+- Compra: Amazon físico `dp/6501957311` e e-book `dp/B0GMJB9LVN`.
+- Imagens: as duas saem da arte da capa, direto da diagramação
+  (`~/Desktop/Capa Diagramada.001.jpeg`) — as fotos do exemplar foram
+  descartadas. `img/livro.jpg|webp` é a capa chapada da landing: sem sombra e
+  sem canto arredondado, só um fio de 1px, porque a arte tem fundo branco igual
+  ao da página. `img/slide-livro.jpg|webp` é a mesma capa centralizada em
+  1600×900 com fundo branco, para o slide do carrossel.
+  A foto da quarta capa serviu só para transcrever o texto da metodologia
+  (15/08/2026) — não é imagem do site.
+  `img/quadro-cores.png|webp` é o quadro resumo dos gatilhos mentais, recortado
+  de uma página do livro; entra no fim da seção da metodologia. O título e a
+  frase de abertura foram para o HTML como texto — só a arte é imagem.
+- Cópia autografada: R$ 72 + R$ 12 de frete = R$ 84. Formulário com endereço,
+  enviado ao mesmo Web3Forms do contato — o e-mail cai em
+  astenio.araujo@gmail.com. Nada é gravado: o site continua estático.
+- **Anexo de arquivo no Web3Forms é recurso de plano pago** (plano gratuito:
+  250 envios/mês, sem upload). Por isso o campo de arquivo saiu do formulário
+  em 15/08/2026: quem compra manda o comprovante por e-mail comum para
+  contato@inovai.com.br, com botão de copiar o endereço — de propósito não é
+  link `mailto:`.
+- Pagamento: QR Code do Pix em `img/pix-qr.*`, recortado do QR do banco (a
+  moldura roxa do app foi descartada). O BR Code já traz favorecido (Astênio
+  Araújo) e o valor de R$ 84,00 embutidos — **se o preço mudar, o QR tem de ser
+  gerado de novo**. O mesmo código vai no `data-pix` do botão "Copiar código
+  Pix", para quem paga do computador.
 
 Site pessoal `astenioaraujo.com.br` fica para depois, como segundo serviço.

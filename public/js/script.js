@@ -153,15 +153,25 @@
 
   /* Arrastar com o dedo */
   var inicioX = null;
+  var arrastou = false;
   trilha.addEventListener('touchstart', function (e) {
     inicioX = e.touches[0].clientX;
   }, { passive: true });
   trilha.addEventListener('touchend', function (e) {
     if (inicioX === null) return;
     var distancia = e.changedTouches[0].clientX - inicioX;
-    if (Math.abs(distancia) > 45) { mostrar(atual + (distancia < 0 ? 1 : -1)); parar(); }
+    if (Math.abs(distancia) > 45) {
+      mostrar(atual + (distancia < 0 ? 1 : -1));
+      parar();
+      /* Slide com link: o arrasto não pode virar clique e abrir a página. */
+      arrastou = true;
+      setTimeout(function () { arrastou = false; }, 400);
+    }
     inicioX = null;
   });
+  trilha.addEventListener('click', function (e) {
+    if (arrastou) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
 
   /* Avanço automático, interrompido assim que a pessoa assume o controle */
   var relogio = null;
