@@ -585,6 +585,49 @@ figure.hero__citacao figcaption span{
   border-radius:var(--radius);
 }
 
+/* Cartão do livro, logo abaixo da foto: apresenta o Astênio como autor e leva
+   à landing. O cartão inteiro é o link, como o slide do carrossel. */
+.autor{
+  display:block;
+  margin-top:22px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+  transition:border-color .25s var(--ease), transform .25s var(--ease);
+}
+.autor:hover{ border-color:var(--line-strong); transform:translateY(-2px); }
+.autor__rotulo{
+  display:block;
+  margin-bottom:12px;
+  font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+.autor__conteudo{ display:flex; gap:16px; align-items:flex-start; }
+.autor__capa{ flex:0 0 84px; }
+.autor__capa img{
+  width:100%; height:auto;
+  border:1px solid var(--line);
+}
+.autor__texto strong{
+  display:block;
+  font-size:1rem; letter-spacing:-.02em;
+  margin-bottom:6px;
+}
+.autor__texto p{
+  margin:0;
+  font-size:.9rem;
+  color:var(--text-dim);
+}
+.autor__mais{
+  display:inline-block;
+  margin-top:10px;
+  font-size:.9rem;
+  color:var(--accent);
+  transition:transform .25s var(--ease);
+}
+.autor:hover .autor__mais{ transform:translateX(3px); }
+
 .creds{ list-style:none; margin:30px 0 0; padding:0; }
 .creds li{
   padding:14px 0;
