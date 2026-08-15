@@ -101,9 +101,10 @@ custa nada.
   1600×900 com fundo branco, para o slide do carrossel.
   A foto da quarta capa serviu só para transcrever o texto da metodologia
   (15/08/2026) — não é imagem do site.
-  `img/quadro-cores.png|webp` é o quadro resumo dos gatilhos mentais, recortado
-  de uma página do livro; entra no fim da seção da metodologia. O título e a
-  frase de abertura foram para o HTML como texto — só a arte é imagem.
+  `img/quadro-cores.*`, `img/piramide-cores.*` e `img/mistura-cores.*` são as
+  três figuras recortadas de páginas do livro, no fim da seção da metodologia.
+  Mesmo tratamento nas três: só a arte vira imagem, e os títulos e parágrafos
+  em volta vão para o HTML como texto.
 - Cópia autografada: R$ 72 + R$ 12 de frete = R$ 84. Formulário com endereço,
   enviado ao mesmo Web3Forms do contato — o e-mail cai em
   astenio.araujo@gmail.com. Nada é gravado: o site continua estático.

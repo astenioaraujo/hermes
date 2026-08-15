@@ -838,8 +838,35 @@ figure.hero__citacao figcaption span{
   box-shadow:0 0 0 3px rgba(0,113,227,.22);
 }
 
+/* Campo com erro precisa gritar: borda grossa, fundo tingido e halo vermelho.
+   A versão discreta (só a borda mudando de cor) passava despercebida e a
+   pessoa ficava parada no campo sem entender o que faltava. */
 .field input[aria-invalid="true"],
-.field textarea[aria-invalid="true"]{ border-color:var(--vinho); }
+.field textarea[aria-invalid="true"],
+.field select[aria-invalid="true"]{
+  border-color:var(--vinho);
+  border-width:2px;
+  background:rgba(123,31,54,.05);
+}
+.field input[aria-invalid="true"]:focus,
+.field textarea[aria-invalid="true"]:focus,
+.field select[aria-invalid="true"]:focus{
+  border-color:var(--vinho);
+  background:rgba(123,31,54,.05);
+  box-shadow:0 0 0 3px rgba(123,31,54,.28);
+}
+/* O rótulo também fica vermelho: quem olha de longe vê o campo inteiro marcado */
+.field:has([aria-invalid="true"]) label{ color:var(--vinho); font-weight:600; }
+
+.field--erro{ animation:tremer .3s var(--ease); }
+@keyframes tremer{
+  0%,100%{ transform:translateX(0); }
+  25%{ transform:translateX(-5px); }
+  75%{ transform:translateX(5px); }
+}
+@media (prefers-reduced-motion:reduce){
+  .field--erro{ animation:none; }
+}
 
 .field__hint{
   margin:8px 0 0;
@@ -847,9 +874,41 @@ figure.hero__citacao figcaption span{
   color:var(--text-faint);
 }
 .field__erro{
+  display:flex; align-items:center; gap:7px;
   margin:8px 0 0;
-  font-size:.8rem;
+  font-size:.86rem;
+  font-weight:600;
   color:var(--vinho);
+}
+/* Bolinha de exclamação antes do texto — o erro se anuncia antes de ser lido */
+.field__erro::before{
+  content:"!";
+  flex:0 0 auto;
+  width:17px; height:17px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:.72rem; font-weight:700; line-height:1;
+  color:#fff; background:var(--vinho);
+  border-radius:50%;
+}
+
+/* Resumo no topo do formulário: diz de uma vez tudo o que falta */
+.form__resumo{
+  margin:0 0 22px;
+  padding:16px 18px;
+  border:1px solid rgba(123,31,54,.35);
+  border-left:4px solid var(--vinho);
+  background:rgba(123,31,54,.06);
+  border-radius:12px;
+  color:var(--vinho);
+}
+.form__resumo strong{ display:block; margin-bottom:6px; }
+.form__resumo ul{ margin:0; padding-left:20px; font-size:.92rem; }
+.form__resumo button{
+  font:inherit; font-size:.92rem;
+  color:var(--vinho);
+  background:none; border:0; padding:0;
+  text-decoration:underline;
+  cursor:pointer;
 }
 
 /* Armadilha de robô: fora da tela, mas não display:none — alguns robôs ignoram */

@@ -220,16 +220,76 @@
     });
   });
 
+
+  /* Nome legível do campo, tirado do próprio <label> — é o que aparece na
+     lista do resumo. */
+  function rotuloDe(campo) {
+    var lab = form.querySelector('label[for="' + campo.id + '"]');
+    return lab ? lab.textContent.replace('*', '').trim() : campo.name;
+  }
+
+  function piscar(campo) {
+    var caixa = campo.closest('.field');
+    if (!caixa) return;
+    caixa.classList.remove('field--erro');
+    void caixa.offsetWidth;            // reinicia a animação
+    caixa.classList.add('field--erro');
+  }
+
+  /* Resumo no topo do formulário. Sem ele, quem errou dois campos distantes
+     um do outro só descobre o segundo depois de corrigir o primeiro. */
+  function mostrarResumo(erros) {
+    var caixa = form.querySelector('.form__resumo');
+    if (!caixa) {
+      caixa = document.createElement('div');
+      caixa.className = 'form__resumo';
+      caixa.setAttribute('role', 'alert');
+      caixa.tabIndex = -1;
+      form.insertBefore(caixa, form.firstChild);
+    }
+    caixa.innerHTML = '';
+
+    var titulo = document.createElement('strong');
+    titulo.textContent = erros.length === 1
+      ? 'Falta preencher 1 campo:'
+      : 'Faltam preencher ' + erros.length + ' campos:';
+    caixa.appendChild(titulo);
+
+    var lista = document.createElement('ul');
+    erros.forEach(function (campo) {
+      var item = document.createElement('li');
+      var link = document.createElement('button');
+      link.type = 'button';
+      link.textContent = rotuloDe(campo);
+      link.addEventListener('click', function () {
+        campo.focus();
+        campo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      item.appendChild(link);
+      lista.appendChild(item);
+    });
+    caixa.appendChild(lista);
+  }
+
+  function limparResumo() {
+    var caixa = form.querySelector('.form__resumo');
+    if (caixa) caixa.remove();
+  }
+
   function mostrarErro(campo, texto) {
     var alvo = form.querySelector('[data-erro-de="' + campo.name + '"]');
     campo.setAttribute('aria-invalid', 'true');
     if (alvo) { alvo.textContent = texto; alvo.hidden = false; }
+    piscar(campo);
   }
 
   function limparErro(campo) {
     var alvo = form.querySelector('[data-erro-de="' + campo.name + '"]');
     campo.removeAttribute('aria-invalid');
     if (alvo) alvo.hidden = true;
+    var caixa = campo.closest('.field');
+    if (caixa) caixa.classList.remove('field--erro');
+    if (!form.querySelectorAll('[aria-invalid="true"]').length) limparResumo();
   }
 
   form.addEventListener('input', function (e) {
@@ -279,9 +339,14 @@
 
     var erros = validar();
     if (erros.length) {
-      erros[0].focus();
+      mostrarResumo(erros);
+      /* Foco sem rolagem própria, senão o campo para colado no topo, por baixo
+         da barra fixa. A rolagem é nossa, que deixa o campo no meio da tela. */
+      erros[0].focus({ preventScroll: true });
+      erros[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
+    limparResumo();
 
     /* Checkbox vai como booleano: é a armadilha de robô que o Web3Forms lê. */
     var dados = {};
