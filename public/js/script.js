@@ -136,19 +136,19 @@
     }
   }
 
-  setaProxima.addEventListener('click', function () { mostrar(atual + 1); parar(); });
-  setaAnterior.addEventListener('click', function () { mostrar(atual - 1); parar(); });
+  setaProxima.addEventListener('click', function () { mostrar(atual + 1); reiniciar(); });
+  setaAnterior.addEventListener('click', function () { mostrar(atual - 1); reiniciar(); });
 
   for (var i = 0; i < pontos.length; i++) {
     (function (indice) {
-      pontos[indice].addEventListener('click', function () { mostrar(indice); parar(); });
+      pontos[indice].addEventListener('click', function () { mostrar(indice); reiniciar(); });
     })(i);
   }
 
   /* Setas do teclado quando o carrossel está em foco */
   trilha.parentNode.parentNode.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { mostrar(atual + 1); parar(); }
-    if (e.key === 'ArrowLeft') { mostrar(atual - 1); parar(); }
+    if (e.key === 'ArrowRight') { mostrar(atual + 1); reiniciar(); }
+    if (e.key === 'ArrowLeft') { mostrar(atual - 1); reiniciar(); }
   });
 
   /* Arrastar com o dedo */
@@ -162,7 +162,7 @@
     var distancia = e.changedTouches[0].clientX - inicioX;
     if (Math.abs(distancia) > 45) {
       mostrar(atual + (distancia < 0 ? 1 : -1));
-      parar();
+      reiniciar();
       /* Slide com link: o arrasto não pode virar clique e abrir a página. */
       arrastou = true;
       setTimeout(function () { arrastou = false; }, 400);
@@ -173,15 +173,35 @@
     if (arrastou) { e.preventDefault(); e.stopPropagation(); }
   }, true);
 
-  /* Avanço automático, interrompido assim que a pessoa assume o controle */
+  /* Avanço automático a cada 3 segundos.
+     Antes, qualquer interação — inclusive só passar o mouse por cima — matava
+     o relógio de vez, e o carrossel ficava parado para sempre. Agora ele só
+     pausa enquanto o ponteiro está em cima, e navegar reinicia a contagem,
+     para o slide escolhido não sumir logo em seguida. */
+  var INTERVALO = 3000;
   var relogio = null;
+
   function parar() {
     if (relogio) { clearInterval(relogio); relogio = null; }
   }
+
+  function comecar() {
+    if (reduced || !navegavel || relogio) return;
+    relogio = setInterval(function () { mostrar(atual + 1); }, INTERVALO);
+  }
+
+  function reiniciar() { parar(); comecar(); }
+
   if (!reduced && navegavel) {
-    relogio = setInterval(function () { mostrar(atual + 1); }, 7000);
     var palco = trilha.parentNode;
     palco.addEventListener('mouseenter', parar);
+    palco.addEventListener('mouseleave', comecar);
+    /* Fora da aba, o navegador estrangula o timer e os slides se acumulam:
+       melhor parar de vez e recomeçar quando a página volta a aparecer. */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) parar(); else comecar();
+    });
+    comecar();
   }
 
   mostrar(0);
