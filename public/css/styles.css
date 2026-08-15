@@ -1128,6 +1128,43 @@ figure.hero__citacao figcaption span{
 .cores__item--amarelo{ border-left-color:var(--dourado); }
 .cores__item--amarelo h3{ color:var(--dourado); }
 
+/* ---------- Página de palestras ---------- */
+
+.palestras-hero{
+  padding-top:clamp(96px,10vw,132px);
+  padding-bottom:0;
+}
+.palestras-hero__titulo{
+  font-size:clamp(2rem,5vw,3.2rem);
+  letter-spacing:-.03em;
+  line-height:1.06;
+  margin:0 0 clamp(28px,4vw,40px);
+}
+.palestras-hero__inner{
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:clamp(24px,4vw,48px);
+}
+/* Atalho para o formulário, que de outro modo só aparece no fim da página */
+.palestras-cta p{
+  margin:0 0 14px;
+  font-size:1.05rem;
+  color:var(--text-dim);
+}
+
+/* A foto ocupava a largura inteira e empurrava o texto para fora da primeira
+   tela — pela metade, ela ainda apresenta a cena e o texto começa cedo. */
+.palestras-foto{ margin:0; flex:0 1 560px; max-width:min(100%, 560px); }
+.palestras-foto img{
+  width:100%; height:auto;
+  border-radius:var(--radius);
+}
+.palestras-hero + .section{ padding-top:clamp(36px,5vw,56px); }
+
+/* Entre os temas e o formulário havia até 336px de respiro somado — parecia
+   fim de página. O intervalo aqui é o de dentro de um assunto só. */
+#sobre-palestras{ padding-bottom:clamp(40px,6vw,72px); }
+#proposta{ padding-top:clamp(48px,7vw,84px); }
+
 .quadro__titulo{ margin:clamp(36px,5vw,56px) 0 12px; }
 .quadro{
   margin:clamp(20px,3vw,28px) 0 0;

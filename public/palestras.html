@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palestras com Astênio Araújo — administração, estratégia e gestão</title>
+<meta name="description" content="Palestras de Astênio Araújo para executivos, empresários e estudantes de gestão. Temas de administração, estratégia, gestão financeira e gestão de pessoas. Peça uma proposta.">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="Inovai Consultoria — início">
+      <picture>
+        <source srcset="img/logo-inovai.webp" type="image/webp">
+        <img src="img/logo-inovai.png" width="216" height="120" alt="Inovai Consultoria">
+      </picture>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html#consultoria">Consultoria</a>
+      <a href="index.html#metodo">Como funciona</a>
+      <a href="index.html#clientes">Clientes</a>
+      <a href="livro.html">Livro</a>
+      <a href="palestras.html">Palestras</a>
+      <a href="index.html#sobre">Quem conduz</a>
+    </nav>
+
+    <a class="nav__cta" href="#proposta">Pedir proposta</a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <div class="menu" id="navMenu" hidden>
+    <a href="index.html#consultoria">Consultoria</a>
+    <a href="index.html#metodo">Como funciona</a>
+    <a href="index.html#clientes">Clientes</a>
+    <a href="livro.html">Livro</a>
+    <a href="palestras.html">Palestras</a>
+    <a href="index.html#sobre">Quem conduz</a>
+    <a href="#proposta">Pedir proposta</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="section palestras-hero" id="topo">
+    <div class="wrap">
+      <p class="eyebrow reveal">Palestras</p>
+      <h1 class="reveal palestras-hero__titulo">Conteúdo de alto padrão,<br>para plateias exigentes.</h1>
+
+      <div class="palestras-hero__inner">
+        <figure class="palestras-foto reveal">
+          <picture>
+            <source srcset="img/palestras.webp" type="image/webp">
+            <img src="img/palestras.jpg" width="1672" height="941"
+                 alt="Astênio Araújo em palestra, de microfone na mão, diante de um auditório lotado">
+          </picture>
+        </figure>
+
+        <!-- O formulário fica no fim da página; este atalho leva direto a ele -->
+        <div class="palestras-cta reveal">
+          <p>Quer o Astênio no seu evento?</p>
+          <a class="btn btn--primary" href="#proposta">Peça uma proposta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE AS PALESTRAS ============ -->
+  <section class="section" id="sobre-palestras">
+    <div class="wrap prosa">
+      <p class="lead reveal">
+        Astênio Araújo apresenta palestras de alto padrão para plateias de altos
+        executivos e também para empresários e estudantes de gestão.
+      </p>
+      <p class="reveal">
+        Os temas giram em torno de <strong>administração</strong>,
+        <strong>estratégia</strong>, <strong>gestão financeira</strong> e
+        <strong>gestão de pessoas</strong> — o mesmo repertório de mais de 30 anos
+        como executivo em corporações nacionais e multinacionais, agora traduzido
+        para o palco.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROPOSTA ============ -->
+  <section class="section section--alt" id="proposta">
+    <div class="wrap">
+      <p class="eyebrow reveal">Contratar</p>
+      <h2 class="reveal">Peça uma proposta</h2>
+      <p class="lead reveal">
+        Conte sobre o evento e a proposta chega por e-mail. Nada fica gravado
+        no site.
+      </p>
+
+      <form class="form reveal" id="formPalestra" novalidate>
+        <!-- Web3Forms: a chave é pública por natureza, ela só endereça o envio
+             para a caixa cadastrada. Não dá acesso a nada — pode ficar no HTML. -->
+        <input type="hidden" name="access_key" value="b5db4f8d-cea5-414e-a838-e527a582b4c8">
+        <input type="hidden" name="subject" value="Pedido de proposta de palestra — site da Inovai">
+        <input type="hidden" name="from_name" value="Site Inovai — Palestras">
+
+        <div class="form__grid">
+          <div class="field">
+            <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required
+                   maxlength="120" placeholder="Quem está fazendo a cotação">
+            <p class="field__erro" data-erro-de="nome" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="cargo">Cargo <span class="req" aria-hidden="true">*</span></label>
+            <input id="cargo" name="cargo" type="text" required maxlength="120"
+                   autocomplete="organization-title" placeholder="Diretor, gerente, coordenador…">
+            <p class="field__erro" data-erro-de="cargo" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="empresa">Empresa ou instituição <span class="req" aria-hidden="true">*</span></label>
+            <input id="empresa" name="empresa" type="text" required maxlength="120"
+                   autocomplete="organization" placeholder="Nome da empresa, escola ou entidade">
+            <p class="field__erro" data-erro-de="empresa" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required
+                   maxlength="180" placeholder="voce@empresa.com.br">
+            <p class="field__hint">É por aqui que a proposta é enviada.</p>
+            <p class="field__erro" data-erro-de="email" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="whatsapp">WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" required
+                   maxlength="20" placeholder="(84) 99999-9999">
+            <p class="field__erro" data-erro-de="whatsapp" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" inputmode="tel"
+                   autocomplete="tel" maxlength="20" placeholder="(84) 3232-0000">
+            <p class="field__erro" data-erro-de="telefone" hidden></p>
+          </div>
+
+          <div class="field field--full">
+            <label for="local">Cidade / local da palestra <span class="req" aria-hidden="true">*</span></label>
+            <input id="local" name="local" type="text" required maxlength="180"
+                   placeholder="Natal/RN — auditório do hotel, campus, sede da empresa…">
+            <p class="field__hint">Cidade e estado, e o espaço, se já estiver definido.</p>
+            <p class="field__erro" data-erro-de="local" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="data">Data prevista</label>
+            <input id="data" name="data" type="text" maxlength="80"
+                   placeholder="12/09/2026 — ou o mês, se ainda não fechou">
+          </div>
+
+          <div class="field">
+            <label for="publico">Público estimado</label>
+            <input id="publico" name="publico" type="text" inputmode="numeric"
+                   maxlength="20" placeholder="200 pessoas">
+          </div>
+
+          <div class="field">
+            <label for="perfil">Perfil da plateia</label>
+            <input id="perfil" name="perfil" type="text" maxlength="120"
+                   placeholder="Executivos, empresários, estudantes…">
+          </div>
+
+          <div class="field">
+            <label for="duracao">Duração desejada</label>
+            <input id="duracao" name="duracao" type="text" maxlength="80"
+                   placeholder="1 hora, mais 20 min de perguntas">
+          </div>
+
+          <div class="field field--full">
+            <label for="tema">Tema e contexto do evento <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="tema" name="tema" rows="5" required maxlength="3000"
+                      placeholder="Que assunto interessa, qual é o evento e o que a plateia precisa levar embora."></textarea>
+            <p class="field__erro" data-erro-de="tema" hidden></p>
+          </div>
+        </div>
+
+        <!-- Anti-spam: invisível para pessoas, atraente para robôs. O Web3Forms
+             descarta o envio quando este campo vem preenchido. Não remover. -->
+        <div class="hp" aria-hidden="true">
+          <label for="botcheck">Deixe este campo em branco</label>
+          <input id="botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form__acoes">
+          <button class="btn btn--primary" type="submit" id="btnPalestra">Pedir proposta</button>
+          <p class="form__nota">Seus dados são usados apenas para responder a esta cotação.</p>
+        </div>
+
+        <p class="form__aviso" id="formPalestraAviso" role="alert" hidden></p>
+      </form>
+
+      <div class="form__ok" id="formPalestraOk" hidden>
+        <h3>Pedido recebido.</h3>
+        <p>A proposta chega no e-mail informado. Se preferir adiantar alguma
+          coisa, ligue para (84) 3211-3414.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <div class="foot__brand">
+      <strong>Inovai</strong>
+      <span>Consultoria Empresarial Ltda.</span>
+    </div>
+    <address class="foot__contact">
+      Rua Ipanguassú, 1123 — Tirol<br>
+      Natal · RN<br>
+      <a href="tel:+558432113414">+55 84 3211-3414</a><br>
+      <a href="https://instagram.com/astenioaraujo" target="_blank" rel="noopener">@astenioaraujo</a>
+    </address>
+    <nav class="foot__links" aria-label="Rodapé">
+      <a href="index.html#consultoria">Consultoria</a>
+      <a href="livro.html">Livro</a>
+      <a href="palestras.html">Palestras</a>
+      <a href="index.html#sobre">Quem conduz</a>
+    </nav>
+  </div>
+  <div class="wrap foot__base">
+    <small>© <span id="ano">2026</span> Inovai Consultoria Empresarial Ltda. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/palestras.js"></script>
+</body>
+</html>

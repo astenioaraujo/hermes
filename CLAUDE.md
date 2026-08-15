@@ -119,4 +119,16 @@ custa nada.
   gerado de novo**. O mesmo código vai no `data-pix` do botão "Copiar código
   Pix", para quem paga do computador.
 
+## Landing de palestras (`public/palestras.html`)
+
+3º slide do carrossel, também com o slide inteiro como link. Foto de palco em
+`img/palestras.*` (hero) e `img/slide-palestras.*` (16:9 do carrossel), vindas
+de `~/Desktop/Palestras.png`.
+
+- Formulário `formPalestra` (`js/palestras.js`, nascido do `livro.js`): pega os
+  dados de quem cota — nome, cargo, empresa, e-mail, WhatsApp, telefone — mais
+  **cidade/local da palestra**, data, público, perfil, duração e o tema.
+- Vai para o mesmo Web3Forms das outras páginas (mesma access key), com assunto
+  próprio: "Pedido de proposta de palestra — site da Inovai".
+
 Site pessoal `astenioaraujo.com.br` fica para depois, como segundo serviço.
