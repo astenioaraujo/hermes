@@ -54,6 +54,7 @@ código versionado — só em variável de ambiente do lado servidor.
 public/           o que vai ao ar (Publish Directory do Static Site)
   index.html      site da Inovai — HTML puro, caminhos relativos, sem Jinja
   livro.html      landing do livro (2º slide do carrossel aponta para cá)
+  sobre.html      "Sobre a Inovai" — história da empresa e o Nullius in Verba
   css/styles.css
   js/script.js    menu mobile, reveal on scroll, carrossel, form de contato
   js/livro.js     formulário de cópia autografada (só na livro.html)
@@ -167,5 +168,17 @@ vindas de `~/Desktop/Treinamento.png`.
   de palestra, com rótulos de treinamento (cidade/local do treinamento, quantas
   pessoas, perfil da equipe, formato e duração, módulos e contexto).
 - Mesmo Web3Forms, assunto "Pedido de orçamento de treinamento — site da Inovai".
+
+## Página "Sobre a Inovai" (`public/sobre.html`)
+
+Só texto, sem imagem e sem formulário — não entrou no carrossel. Duas seções: a
+apresentação da empresa (fundada em 1999, em Natal/RN) e o *Nullius in Verba*,
+o lema da Royal Society que a Inovai adota. Os dois hexâmetros de Horácio ficam
+num `.verba`, com a tradução na `figcaption`.
+
+O link "Sobre" foi acrescentado ao menu, ao menu mobile e ao rodapé das cinco
+páginas, ao lado de "Quem conduz" — que continua apontando para a seção do
+Astênio na home. São coisas diferentes: "Quem conduz" é a pessoa, "Sobre" é a
+empresa.
 
 Site pessoal `astenioaraujo.com.br` fica para depois, como segundo serviço.

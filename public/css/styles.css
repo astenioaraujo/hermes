@@ -1143,7 +1143,32 @@ figure.hero__citacao figcaption span{
 .livro-hero + .section{ padding-top:clamp(24px,3.5vw,44px); }
 
 .prosa{ max-width:760px; }
+.prosa h1,
 .prosa h2{ margin-bottom:clamp(20px,3vw,28px); }
+
+/* ---------- Hexâmetros do Nullius in Verba (sobre.html) ---------- */
+
+.verba{
+  margin:clamp(32px,5vw,44px) 0 0;
+  padding:clamp(24px,3.5vw,32px) clamp(26px,4vw,36px);
+  border-left:3px solid var(--dourado);
+  background:var(--surface);
+  border-radius:0 var(--radius) var(--radius) 0;
+}
+.verba blockquote{
+  margin:0;
+  font-style:italic;
+  font-size:clamp(1.1rem,2vw,1.32rem);
+  line-height:1.5;
+  letter-spacing:-.01em;
+  color:var(--text);
+}
+.verba figcaption{
+  margin-top:16px;
+  font-size:.98rem;
+  line-height:1.6;
+  color:var(--text-dim);
+}
 
 .cores{
   list-style:none;
