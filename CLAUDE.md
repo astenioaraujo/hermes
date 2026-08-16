@@ -82,7 +82,7 @@ inventar esses valores.
 
 ### Logos de clientes
 
-São 15 em `img/clientes/`, fechando 5 linhas de 3 no desktop. Todos com o mesmo
+São 18 em `img/clientes/`, fechando 6 linhas de 3 no desktop. Todos com o mesmo
 tratamento: fundo removido (transparente), recorte justo e escala dentro de uma
 caixa de 460×160, salvos em `.png` + `.webp`. Na página vão em cinza e
 translúcidos, e a cor volta no hover.
@@ -93,6 +93,11 @@ translúcidos, e a cor volta no hover.
   os peixes vazados em branco — e não traz o nome. O nome entra como texto no
   HTML, embaixo da figura, e a imagem ganha contraste extra no filtro cinza
   porque em cinza puro o disco clareia e os peixes somem.
+- André Elali Advogados: a arte original é branca sobre fundo preto; foi
+  invertida para virar preta sobre transparente, como os demais.
+- Larco: o único arquivo que existe é o do próprio site deles, 178×46 — pequeno
+  demais para chegar à altura dos outros. Foi ampliado 3× no Pillow só para o
+  limite de altura passar a valer.
 - Em duas colunas (≤620px) a última célula ocupa a linha inteira quando a
   contagem é ímpar.
 
