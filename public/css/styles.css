@@ -80,6 +80,11 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.035em; line-height:1.05; }
 
 h1.hero__title{ font-size:clamp(2.8rem, 8.5vw, 6rem); }
 
+/* h1 sem classe própria tem o mesmo tamanho do h2 — senão cai no 2em do
+   navegador e o título de abertura da página fica menor que os títulos das
+   seções abaixo dele. Os h1 com classe (hero, livro, palestras) mandam mais
+   que esta regra e continuam com os tamanhos deles. */
+h1,
 h2{ font-size:clamp(2.1rem, 5.4vw, 3.75rem); }
 
 h3{ font-size:1.3rem; letter-spacing:-.02em; line-height:1.25; }

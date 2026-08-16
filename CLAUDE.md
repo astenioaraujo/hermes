@@ -175,6 +175,10 @@ vindas de `~/Desktop/Treinamento.png`.
 - `--section-y` foi de `clamp(88px,13vw,168px)` para `clamp(60px,8vw,108px)`, e
   a margem do `.section__head` encolheu junto: o vazio entre um bloco e o
   seguinte dava a impressão de que a página tinha acabado.
+- `h1` sem classe própria usa o mesmo tamanho do `h2`. Sem isso ele cai no 2em
+  do navegador e o título de abertura da página fica menor que os títulos das
+  seções seguintes. Os `h1` com classe (hero da home, livro, palestras)
+  continuam com os tamanhos próprios deles.
 - A antiga `.prosa` estreitava o próprio `.wrap`, e como o `.wrap` é
   centralizado o texto ficava deslocado à direita, fora da margem do logo e dos
   cartões. Ela saiu do site. Duas classes a substituem, ambas com 800px de
