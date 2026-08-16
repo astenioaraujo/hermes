@@ -131,4 +131,17 @@ de `~/Desktop/Palestras.png`.
 - Vai para o mesmo Web3Forms das outras páginas (mesma access key), com assunto
   próprio: "Pedido de proposta de palestra — site da Inovai".
 
+## Landing de treinamentos (`public/treinamentos.html`)
+
+4º slide do carrossel. Nasceu da `palestras.html` e reaproveita o CSS dela
+(`.palestras-hero`, `.palestras-foto`, `.palestras-cta`) — mexer nessas classes
+mexe nas duas páginas. Foto em `img/treinamentos.*` e `img/slide-treinamentos.*`,
+vindas de `~/Desktop/Treinamento.png`.
+
+- Os 12 módulos ficam numa lista `.modulos`, na ordem ditada pelo Astênio.
+- Formulário `formTreinamento` (`js/treinamentos.js`): mesmos campos da cotação
+  de palestra, com rótulos de treinamento (cidade/local do treinamento, quantas
+  pessoas, perfil da equipe, formato e duração, módulos e contexto).
+- Mesmo Web3Forms, assunto "Pedido de orçamento de treinamento — site da Inovai".
+
 Site pessoal `astenioaraujo.com.br` fica para depois, como segundo serviço.

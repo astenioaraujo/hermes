@@ -1172,8 +1172,31 @@ figure.hero__citacao figcaption span{
 
 /* Entre os temas e o formulário havia até 336px de respiro somado — parecia
    fim de página. O intervalo aqui é o de dentro de um assunto só. */
-#sobre-palestras{ padding-bottom:clamp(40px,6vw,72px); }
-#proposta{ padding-top:clamp(48px,7vw,84px); }
+#sobre-palestras,
+#sobre-treinamentos{ padding-bottom:clamp(40px,6vw,72px); }
+#proposta,
+#orcamento{ padding-top:clamp(48px,7vw,84px); }
+
+/* Os doze módulos: lista enxuta, em colunas conforme couber */
+.modulos{
+  list-style:none;
+  margin:clamp(24px,3vw,32px) 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:0 clamp(20px,3vw,36px);
+}
+.modulos li{
+  display:flex; align-items:baseline; gap:12px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+  font-size:1rem;
+}
+.modulos span{
+  font-size:.78rem;
+  font-variant-numeric:tabular-nums;
+  color:var(--text-faint);
+}
 
 .quadro__titulo{ margin:clamp(36px,5vw,56px) 0 12px; }
 .quadro{
