@@ -24,7 +24,10 @@
 
   --wrap:          1120px;
   --gutter:        clamp(20px, 5vw, 40px);
-  --section-y:     clamp(88px, 13vw, 168px);
+  /* Respiro entre seções. Era clamp(88px,13vw,168px) e abria um vazio grande
+     demais entre um bloco e o seguinte — de longe parecia que a página tinha
+     acabado ali. */
+  --section-y:     clamp(60px, 8vw, 108px);
   --radius:        20px;
 
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
@@ -301,7 +304,7 @@ figure.hero__citacao figcaption span{
 .section{ padding-block:var(--section-y); }
 .section--alt{ background:var(--bg-alt); }
 
-.section__head{ max-width:60ch; margin-bottom:clamp(48px,7vw,88px); }
+.section__head{ max-width:60ch; margin-bottom:clamp(36px,4.5vw,60px); }
 .section__head .lead{ margin-top:24px; }
 
 /* ---------- Números ---------- */
@@ -604,6 +607,63 @@ figure.hero__citacao figcaption span{
 }
 .services h3{ font-size:1.15rem; margin-bottom:10px; }
 .services p{ color:var(--text-dim); font-size:.94rem; }
+
+/* ---------- Etapas da consultoria (consultoria.html) ----------
+   Mesmo cartão das .services, mas com espaço para a lista do "o que fazemos";
+   por isso duas colunas em vez de quatro. */
+
+.passos{
+  list-style:none; margin:0; padding:0;
+  display:grid;
+  /* 420px força duas colunas na largura do wrap: quatro etapas fecham 2×2,
+     sem a quarta sobrando sozinha numa terceira linha. */
+  /* min() é o que impede a coluna de ficar mais larga que a tela no celular —
+     com minmax(420px,1fr) puro ela não encolhia e o texto era cortado pelo
+     overflow:hidden daqui de cima. */
+  grid-template-columns:repeat(auto-fit, minmax(min(420px,100%),1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.passos > li{
+  background:var(--bg);
+  padding:clamp(28px,3.2vw,38px);
+  transition:background .35s var(--ease);
+}
+.passos > li:hover{ background:#fafafc; }
+.passos__num{
+  font-size:.75rem; font-weight:600; letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:block; margin-bottom:18px;
+}
+.passos h3{ font-size:1.15rem; margin-bottom:10px; }
+.passos__resumo{ color:var(--text-dim); font-size:.94rem; margin:0; }
+.passos__rotulo{
+  margin:22px 0 10px;
+  font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-faint);
+}
+.passos ul{
+  list-style:none; margin:0; padding:0;
+}
+.passos ul li{
+  position:relative;
+  padding:9px 0 9px 18px;
+  border-top:1px solid var(--line);
+  font-size:.95rem;
+  color:var(--text);
+}
+.passos ul li::before{
+  content:"";
+  /* 9px do padding + meia linha: o traço fica na altura da primeira linha,
+     e não colado no topo dela. */
+  position:absolute; left:0; top:calc(9px + .8em);
+  width:6px; height:1px;
+  background:var(--line-strong);
+}
 
 /* ---------- Sobre ---------- */
 
@@ -1142,9 +1202,20 @@ figure.hero__citacao figcaption span{
 /* A metodologia entra logo abaixo dos botões, ainda na primeira tela */
 .livro-hero + .section{ padding-top:clamp(24px,3.5vw,44px); }
 
-.prosa{ max-width:760px; }
-.prosa h1,
-.prosa h2{ margin-bottom:clamp(20px,3vw,28px); }
+/* Coluna de texto corrido que começa na mesma margem do logo e dos blocos de
+   cartões. A antiga .prosa estreitava o próprio .wrap — e como o .wrap é
+   centralizado, o texto ficava deslocado à direita, fora do alinhamento do
+   resto da página.
+
+   .texto  → vai dentro de um .wrap normal (sobre.html, consultoria.html).
+   .texto-bloco → vai no lugar da classe do próprio .wrap, limitando os filhos;
+                  evita mexer na indentação de páginas que já existiam
+                  (livro, palestras, treinamentos). */
+.texto{ max-width:800px; }
+.texto-bloco > *{ max-width:800px; }
+
+.texto h1, .texto h2,
+.texto-bloco h1, .texto-bloco h2{ margin-bottom:clamp(20px,3vw,28px); }
 
 /* ---------- Hexâmetros do Nullius in Verba (sobre.html) ---------- */
 

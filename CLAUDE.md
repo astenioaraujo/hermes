@@ -55,6 +55,7 @@ public/           o que vai ao ar (Publish Directory do Static Site)
   index.html      site da Inovai — HTML puro, caminhos relativos, sem Jinja
   livro.html      landing do livro (2º slide do carrossel aponta para cá)
   sobre.html      "Sobre a Inovai" — história da empresa e o Nullius in Verba
+  consultoria.html  "Como é realizada uma consultoria" — as 4 etapas
   css/styles.css
   js/script.js    menu mobile, reveal on scroll, carrossel, form de contato
   js/livro.js     formulário de cópia autografada (só na livro.html)
@@ -168,6 +169,33 @@ vindas de `~/Desktop/Treinamento.png`.
   de palestra, com rótulos de treinamento (cidade/local do treinamento, quantas
   pessoas, perfil da equipe, formato e duração, módulos e contexto).
 - Mesmo Web3Forms, assunto "Pedido de orçamento de treinamento — site da Inovai".
+
+## Espaçamento e alinhamento do texto
+
+- `--section-y` foi de `clamp(88px,13vw,168px)` para `clamp(60px,8vw,108px)`, e
+  a margem do `.section__head` encolheu junto: o vazio entre um bloco e o
+  seguinte dava a impressão de que a página tinha acabado.
+- A antiga `.prosa` estreitava o próprio `.wrap`, e como o `.wrap` é
+  centralizado o texto ficava deslocado à direita, fora da margem do logo e dos
+  cartões. Ela saiu do site. Duas classes a substituem, ambas com 800px de
+  medida e começando na margem do logo:
+  - **`.texto`** — vai dentro de um `.wrap` normal (`sobre.html`,
+    `consultoria.html`).
+  - **`.texto-bloco`** — vai no lugar da classe do próprio `.wrap` e limita os
+    filhos; usada em `livro.html`, `palestras.html` e `treinamentos.html`, onde
+    trocar a marcação exigiria reindentar a página inteira.
+
+## Página "Como é realizada uma consultoria" (`public/consultoria.html`)
+
+Só texto, sem imagem e sem formulário. Três blocos: a analogia com o tratamento
+médico, as três situações em que a consultoria é chamada (cartões `.services`,
+reaproveitados da home) e as quatro etapas num `.passos` — cartão parecido, mas
+com espaço para a lista do "o que fazemos", em duas colunas.
+
+O item "Como funciona" do menu **deixou de apontar para `index.html#metodo` e
+passou a apontar para esta página**, nas seis páginas. A seção do método
+continua na home, só não tem mais link direto no menu — foi para não crescer um
+menu que já tem oito itens.
 
 ## Página "Sobre a Inovai" (`public/sobre.html`)
 
