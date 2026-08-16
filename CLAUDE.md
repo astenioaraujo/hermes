@@ -77,8 +77,27 @@ hero, números, citação de posicionamento, 7 frentes de consultoria, método e
 etapas, clientes, "Quem conduz" e CTA de contato.
 
 Ainda tem placeholders entre colchetes no HTML, aguardando conteúdo real: prazos
-das etapas do método (`[XX semanas]`), logos de clientes, um depoimento e a foto
-do Astênio. Não inventar esses valores.
+das etapas do método (`[XX semanas]`), um depoimento e a foto do Astênio. Não
+inventar esses valores.
+
+### Logos de clientes
+
+São 15 em `img/clientes/`, fechando 5 linhas de 3 no desktop. Todos com o mesmo
+tratamento: fundo removido (transparente), recorte justo e escala dentro de uma
+caixa de 460×160, salvos em `.png` + `.webp`. Na página vão em cinza e
+translúcidos, e a cor volta no hover.
+
+- `.logo--chapado` (Rede Lucena): fundo colorido chapado, fica em cinza também
+  no hover.
+- `.logo--nome` (Pescados da Cruz): a arte é só o símbolo — um disco rosa com
+  os peixes vazados em branco — e não traz o nome. O nome entra como texto no
+  HTML, embaixo da figura, e a imagem ganha contraste extra no filtro cinza
+  porque em cinza puro o disco clareia e os peixes somem.
+- Em duas colunas (≤620px) a última célula ocupa a linha inteira quando a
+  contagem é ímpar.
+
+Não há geração de `.webp` por linha de comando aqui (sem `cwebp`); as conversões
+saíram do Pillow (Python).
 
 Contato: telefone (84) 3211-3414 (fixo, não é WhatsApp), e-mail
 contato@inovai.com.br e Instagram @astenioaraujo — links diretos, sem

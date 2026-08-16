@@ -331,6 +331,9 @@ figure.hero__citacao figcaption span{
 
 @media (max-width:620px){
   .logos{ grid-template-columns:repeat(2, 1fr); }
+  /* Em duas colunas a contagem ímpar deixaria a última célula sozinha, com
+     meia linha vazia ao lado; ela ocupa a linha inteira. */
+  .logos > li:last-child:nth-child(odd){ grid-column:1 / -1; }
 }
 
 /* ---------- Citação de posicionamento ---------- */
@@ -518,6 +521,33 @@ figure.hero__citacao figcaption span{
    recortados. O texto do logo é branco e depende desse fundo para existir. */
 .logo--chapado img{ opacity:.62; }
 .logo--chapado:hover img{ opacity:.62; filter:grayscale(1); }
+
+/* Logo que é só símbolo, sem o nome dentro da arte (Pescados da Cruz): o nome
+   entra como texto embaixo, sem encostar na figura. A imagem cede alguns
+   pixels de altura para que símbolo + nome ocupem a mesma caixa dos outros. */
+/* Menos respiro em cima e embaixo que as outras células: com o padding de 26px
+   sobravam 80px de altura útil, e o disco encolhia para caber junto com o nome
+   em vez de crescer. A célula continua com os mesmos 132px. */
+.logo--nome{ flex-direction:column; gap:6px; padding:14px 30px; }
+/* align-items:center é o que impede o disco de esticar: sem isso o img, como
+   item flex do picture, era alongado na vertical e o círculo virava oval. */
+.logo--nome picture{ flex:none; display:flex; align-items:center; }
+.logo--nome img{ flex:none; }
+/* O símbolo é um disco cheio com os peixes vazados em branco: em cinza puro
+   ele clareia demais e os peixes somem. Um contraste a mais devolve o
+   desenho, e o hover traz a cor de volta como nos outros. */
+.logo--nome img{ max-height:80px; filter:grayscale(1) contrast(1.2) brightness(.88); }
+.logo__nome{
+  /* Miúdo de propósito: o nome só identifica o símbolo, e o espaço que ele
+     abre mão vai todo para o disco. */
+  font-size:.6rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  opacity:.72;
+  transition:opacity .35s var(--ease), color .35s var(--ease);
+}
+.logo--nome:hover .logo__nome{ opacity:1; color:var(--text); }
 
 .testimonial{
   margin:clamp(48px,6vw,80px) auto 0;
