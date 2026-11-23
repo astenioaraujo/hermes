@@ -240,10 +240,10 @@ pedido do Astênio, e são publicadas por commit + push (o Render republica).
 - Lista e cartões são montados por JS: não usar `.reveal` neles (o
   observador só enxerga o que existe no carregamento).
 
-Matérias: nº 1 "A navalha de Occam" (23/11/2026) — artigo antigo de revista,
-revisado (grafia Occam/Ockham, frase de Einstein como "atribuída"), com uma
-navalha aberta desenhada em SVG (`img/blog/navalha-de-occam.svg`) no lugar da
-foto da revista.
+Matérias: nenhuma no ar. "A navalha de Occam" (nº 1) foi publicada em
+23/11/2026 e retirada no mesmo dia a pedido do Astênio (texto antigo demais);
+como ficou poucos minutos no ar, a numeração recomeça do 1 na próxima.
+- Imagens das matérias ficam em `public/img/blog/` (pasta criada quando houver a primeira).
 
 **Menu com nove itens**: o Blog foi o nono, e a barra deixou de caber numa
 linha abaixo de ~1090px (já quebrava "Como funciona"/"Quem conduz" em duas

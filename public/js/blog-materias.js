@@ -15,12 +15,4 @@
    A ordem aqui não importa: a lista sai da mais nova para a mais antiga. */
 
 window.MATERIAS = [
-  {
-    numero: 1,
-    slug: 'navalha-de-occam',
-    titulo: 'A navalha de Occam',
-    data: '2026-11-23',
-    resumo: 'Três candidatos, três planos com as mesmas ideias e tamanhos muito diferentes. Uma conversa sobre simplicidade, excesso de detalhe e o ponto de equilíbrio entre os dois.',
-    chaves: ['simplicidade', 'tomada de decisão', 'planejamento', 'gestão']
-  }
 ];
