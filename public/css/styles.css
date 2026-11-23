@@ -181,12 +181,16 @@ p:last-child{ margin-bottom:0; }
 }
 .menu a:last-child{ border-bottom:0; color:var(--accent); }
 
-/* a gaveta só existe no mobile */
-@media (min-width:821px){
+/* A gaveta assume abaixo de 1100px, e não 820: com nove itens (o Blog foi o
+   nono) a barra não cabe numa linha antes disso, e os rótulos de duas
+   palavras ("Como funciona", "Quem conduz") quebravam em duas linhas. */
+.nav__links a{ white-space:nowrap; }
+
+@media (min-width:1101px){
   .menu{ display:none !important; }
 }
 
-@media (max-width:820px){
+@media (max-width:1100px){
   .nav__links,
   .nav__cta{ display:none; }
   .nav__toggle{ display:flex; }
@@ -1438,3 +1442,98 @@ figure.hero__citacao figcaption span{
   .pedido__pix{ border-left:0; border-top:1px solid var(--line); }
 }
 
+
+/* ---------- Blog (blog.html e public/blog/*.html) ---------- */
+
+.sr{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+.blog-ferramentas{ max-width:800px; margin-top:clamp(32px,4vw,48px); }
+
+.blog-busca input{
+  width:100%;
+  padding:14px 18px;
+  font:inherit; font-size:1rem; color:var(--text);
+  background:var(--surface-2);
+  border:1px solid transparent;
+  border-radius:12px;
+  transition:border-color .25s var(--ease), background .25s var(--ease);
+}
+.blog-busca input:focus{ outline:none; background:var(--surface); border-color:var(--accent); }
+.blog-busca input:disabled{ opacity:.6; }
+
+.blog-chaves{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.blog-chave{
+  padding:6px 13px;
+  font:inherit; font-size:.85rem; color:var(--text-dim);
+  background:var(--surface);
+  border:1px solid var(--line-strong);
+  border-radius:980px;
+  cursor:pointer;
+  transition:background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.blog-chave span{ color:var(--text-faint); font-size:.78rem; margin-left:2px; }
+.blog-chave:hover{ color:var(--text); border-color:var(--text-faint); }
+.blog-chave.is-ativa{ background:var(--text); border-color:var(--text); color:#fff; }
+.blog-chave.is-ativa span{ color:rgba(255,255,255,.7); }
+
+.blog-contagem{ margin:14px 0 0; font-size:.85rem; color:var(--text-faint); }
+
+.blog-lista{
+  list-style:none; margin:clamp(20px,3vw,32px) 0 0; padding:0;
+  max-width:800px;
+  border-top:1px solid var(--line);
+}
+.blog-item{ border-bottom:1px solid var(--line); }
+.blog-item > a{
+  display:block;
+  padding:clamp(24px,3vw,32px) 0;
+}
+.blog-item__meta{ margin:0 0 8px; font-size:.85rem; color:var(--text-faint); }
+.blog-item__titulo{
+  font-size:clamp(1.35rem,2.6vw,1.75rem);
+  letter-spacing:-.025em; line-height:1.2;
+  transition:color .2s var(--ease);
+}
+.blog-item > a:hover .blog-item__titulo{ color:var(--accent); }
+.blog-item__resumo{ margin:10px 0 0; color:var(--text-dim); }
+.blog-item__chaves,
+.materia__chaves{ display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0; }
+.blog-item__chaves span,
+.materia__chaves a{
+  font-size:.78rem; color:var(--text-dim);
+  padding:3px 10px; border-radius:980px;
+  background:var(--surface-2);
+}
+.materia__chaves a:hover{ color:var(--text); background:#ebebef; }
+.blog-item .link{ display:inline-block; margin-top:14px; font-size:.92rem; color:var(--accent); }
+.blog-item > a:hover .link span{ transform:translateX(3px); }
+.blog-item .link span{ display:inline-block; transition:transform .25s var(--ease); }
+
+.blog-vazio{ margin:28px 0 0; color:var(--text-dim); }
+
+/* página da matéria */
+.materia__voltar{ margin:0 0 28px; font-size:.92rem; }
+.materia__voltar .link{ color:var(--accent); }
+.materia__voltar .link span{ display:inline-block; transition:transform .25s var(--ease); }
+.materia__voltar .link:hover span{ transform:translateX(-3px); }
+.materia__voltar--fim{ margin:clamp(40px,5vw,60px) 0 0; padding-top:24px; border-top:1px solid var(--line); }
+.materia h1{ font-size:clamp(2rem,4.6vw,3.1rem); line-height:1.1; }
+.materia__meta{ margin:18px 0 0; color:var(--text-faint); font-size:.92rem; }
+.materia__corpo{ margin-top:clamp(32px,4vw,44px); font-size:1.08rem; line-height:1.7; }
+.materia__corpo h2{ font-size:clamp(1.5rem,3vw,2rem); line-height:1.2; margin:1.8em 0 .6em; }
+.materia__corpo h3{ margin:1.6em 0 .5em; }
+.materia__corpo ul,
+.materia__corpo ol{ margin:0 0 1.1em; padding-left:1.3em; }
+.materia__corpo li{ margin-bottom:.4em; }
+.materia__corpo a{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+.materia__corpo blockquote{
+  margin:1.6em 0; padding:4px 0 4px 22px;
+  border-left:3px solid var(--dourado);
+  color:var(--marinho); font-size:1.15rem;
+}
+.materia__corpo figure{ margin:1.8em 0; }
+.materia__corpo figure img{ width:100%; max-width:560px; height:auto; border-radius:12px; }
+.materia__corpo figcaption{ margin-top:8px; font-size:.85rem; color:var(--text-faint); }

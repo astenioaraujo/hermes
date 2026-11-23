@@ -56,6 +56,8 @@ public/           o que vai ao ar (Publish Directory do Static Site)
   livro.html      landing do livro (2º slide do carrossel aponta para cá)
   sobre.html      "Sobre a Inovai" — história da empresa e o Nullius in Verba
   consultoria.html  "Como é realizada uma consultoria" — as 4 etapas
+  blog.html       lista do blog, montada por js/blog.js a partir de js/blog-materias.js
+  blog/<slug>.html  uma página por matéria
   css/styles.css
   js/script.js    menu mobile, reveal on scroll, carrossel, form de contato
   js/livro.js     formulário de cópia autografada (só na livro.html)
@@ -214,3 +216,36 @@ Astênio na home. São coisas diferentes: "Quem conduz" é a pessoa, "Sobre" é 
 empresa.
 
 Site pessoal `astenioaraujo.com.br` fica para depois, como segundo serviço.
+
+## Blog (`public/blog.html`, 23/11/2026)
+
+Só leitura: não há edição no site. As matérias chegam pelo Claude Code, a
+pedido do Astênio, e são publicadas por commit + push (o Render republica).
+
+- **Índice único**: `public/js/blog-materias.js` (`window.MATERIAS`), uma
+  entrada por matéria — `numero` (sequencial, nunca reaproveitado), `slug`,
+  `titulo`, `data` (AAAA-MM-DD), `resumo`, `chaves` (palavras-chave em
+  minúsculas). A lista sai da mais nova para a mais antiga.
+- **Página da matéria**: `public/blog/<slug>.html`, copiada de
+  `docs/blog/modelo-materia.html` (caminhos com `../`) trocando os `{{...}}`.
+  As palavras-chave da matéria são links `../blog.html?chave=<chave>` e têm de
+  ser **as mesmas** da entrada no índice — o filtro só reconhece chave que
+  existe lá.
+- **Busca** (`js/blog.js`): sem acento e sem maiúscula, todos os termos
+  obrigatórios, sobre título, resumo, chaves e data por extenso. Número
+  sozinho ("7", "007", "nº 7") é busca **exata** pelo número da matéria —
+  senão o "7" casaria com qualquer data. Busca e chave ficam na URL
+  (`?busca=`, `?chave=`), para o link poder ser enviado.
+- Sem foto do autor (o blog já é dele). Imagens das matérias em `img/blog/`.
+- Lista e cartões são montados por JS: não usar `.reveal` neles (o
+  observador só enxerga o que existe no carregamento).
+
+Matérias: nº 1 "A navalha de Occam" (23/11/2026) — artigo antigo de revista,
+revisado (grafia Occam/Ockham, frase de Einstein como "atribuída"), com uma
+navalha aberta desenhada em SVG (`img/blog/navalha-de-occam.svg`) no lugar da
+foto da revista.
+
+**Menu com nove itens**: o Blog foi o nono, e a barra deixou de caber numa
+linha abaixo de ~1090px (já quebrava "Como funciona"/"Quem conduz" em duas
+linhas entre 821 e 1055px antes dele). O menu de celular (☰) passou a assumir
+abaixo de **1100px** em vez de 820, e os links do menu não quebram mais linha.
