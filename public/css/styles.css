@@ -1537,3 +1537,20 @@ figure.hero__citacao figcaption span{
 .materia__corpo figure{ margin:1.8em 0; }
 .materia__corpo figure img{ width:100%; max-width:560px; height:auto; border-radius:12px; }
 .materia__corpo figcaption{ margin-top:8px; font-size:.85rem; color:var(--text-faint); }
+
+/* crédito da fonte, no fim da matéria */
+.materia__fonte{
+  margin-top:clamp(36px,4.5vw,52px);
+  padding:22px 24px;
+  background:var(--bg-alt);
+  border-left:3px solid var(--dourado);
+  border-radius:0 12px 12px 0;
+  font-size:.95rem; line-height:1.6; color:var(--text-dim);
+}
+.materia__fonte p{ margin:0 0 .8em; }
+.materia__fonte p:last-child{ margin-bottom:0; }
+.materia__fonte-titulo{
+  font-size:.78rem; font-weight:700; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--vinho);
+}
+.materia__fonte cite{ font-style:italic; color:var(--text); }

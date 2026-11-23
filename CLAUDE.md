@@ -240,9 +240,16 @@ pedido do Astênio, e são publicadas por commit + push (o Render republica).
 - Lista e cartões são montados por JS: não usar `.reveal` neles (o
   observador só enxerga o que existe no carregamento).
 
-Matérias: nenhuma no ar. "A navalha de Occam" (nº 1) foi publicada em
+Matérias: nº 1 "Um pássaro na mão" (23/11/2026) — texto próprio a partir da
+abertura do capítulo 1, "Simplicidade", de *Ideias que Colam* (Chip e Dan
+Heath). O Astênio mandou o trecho do livro; ele não foi publicado por ser texto
+dos autores. **Matéria baseada em livro leva o quadro `.materia__fonte`** no fim
+(obra, capítulo, autores e a ideia que se tirou dali), dizendo que o texto é
+próprio — nada de transcrição nem tradução.
+
+Retirada: "A navalha de Occam" (nº 1) foi publicada em
 23/11/2026 e retirada no mesmo dia a pedido do Astênio (texto antigo demais);
-como ficou poucos minutos no ar, a numeração recomeça do 1 na próxima.
+como ficou poucos minutos no ar, o nº 1 foi reaproveitado.
 **O Render não tira do ar arquivo apagado do repositório** (a página e a imagem
 continuaram respondendo 200 depois do deploy): por isso
 `public/blog/navalha-de-occam.html` ficou como redirecionamento para

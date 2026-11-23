@@ -15,4 +15,12 @@
    A ordem aqui não importa: a lista sai da mais nova para a mais antiga. */
 
 window.MATERIAS = [
+  {
+    numero: 1,
+    slug: 'um-passaro-na-mao',
+    titulo: 'Um pássaro na mão',
+    data: '2026-11-23',
+    resumo: 'Um provérbio que atravessou 2.500 anos sem campanha nenhuma. O que ele ensina sobre decidir — e sobre comunicar uma ideia de modo que ela fique.',
+    chaves: ['simplicidade', 'comunicação', 'tomada de decisão', 'provérbios']
+  }
 ];
