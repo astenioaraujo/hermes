@@ -245,7 +245,10 @@ abertura do capítulo 1, "Simplicidade", de *Ideias que Colam* (Chip e Dan
 Heath). O Astênio mandou o trecho do livro; ele não foi publicado por ser texto
 dos autores. **Matéria baseada em livro leva o quadro `.materia__fonte`** no fim
 (obra, capítulo, autores e a ideia que se tirou dali), dizendo que o texto é
-próprio — nada de transcrição nem tradução.
+próprio — nada de transcrição nem tradução. Ilustração: mão aberta com um
+pardal pousado, desenhada em SVG (`img/blog/passaro-na-mao.svg`, mesmo traço
+marinho e tons de dourado da navalha). Para conferir um SVG sem navegador:
+`qlmanage -t -s 900 -o <pasta> arquivo.svg` gera um PNG.
 
 Retirada: "A navalha de Occam" (nº 1) foi publicada em
 23/11/2026 e retirada no mesmo dia a pedido do Astênio (texto antigo demais);

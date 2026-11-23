@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 84 500 206" role="img" aria-labelledby="t">
+  <title id="t">Um pássaro pousado numa mão aberta</title>
+  <g stroke="#16304a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- dedos, do mais distante (mínimo) ao mais próximo (indicador) -->
+    <path d="M360 181.0 L438 179.0 Q456 173.0 460 186.0 Q462 197.0 444 199.0 L330 201.0 Z" fill="#f1e3d3"/>
+    <path d="M360 190.5 L464 188.5 Q482 181.5 486 195.5 Q488 207.5 470 209.5 L330 211.5 Z" fill="#f1e3d3"/>
+    <path d="M360 201.0 L474 199.0 Q492 191.0 496 206.0 Q498 219.0 480 221.0 L330 223.0 Z" fill="#f1e3d3"/>
+    <!-- indicador, o dedo de cá -->
+    <path d="M360 213.0 L460 211.0 Q478 203.0 482 218.0 Q484 231.0 466 233.0 L330 235.0 Z" fill="#f1e3d3"/>
+    <!-- palma e antebraço: o preenchimento cobre a base dos dedos (sem
+         emenda reta); o contorno vai só em cima e embaixo -->
+    <path d="M30 262 C110 250 160 246 200 242 C250 238 300 238 372 235
+             L372 181 C340 186 310 196 282 202 L232 196 C200 196 160 200 30 208 Z"
+          fill="#f1e3d3" stroke="none"/>
+    <path d="M30 208 C160 200 200 196 238 197" fill="none"/>
+    <path d="M282 202 C310 196 340 186 372 181" fill="none"/>
+    <path d="M30 262 C110 250 160 246 200 242 C250 238 300 238 372 235" fill="none"/>
+    <!-- polegar, levantado do lado de cá -->
+    <path d="M236 200 C236 176 248 150 268 140 C284 132 296 142 290 158
+             C284 174 280 188 282 204" fill="#f1e3d3"/>
+    <path d="M272 144 C278 142 284 144 286 150" fill="none" stroke-opacity=".4" stroke-width="1.6"/>
+    <!-- punho da camisa -->
+    <path d="M20 196 L120 190 Q128 230 122 270 L20 278 Z" fill="#16304a"/>
+    <path d="M112 191 Q120 230 114 270" fill="none" stroke="#e9e3d6" stroke-width="2"/>
+    <!-- pássaro: cauda, corpo, peito, asa, cabeça, bico, olho, pernas -->
+    <path d="M318 150 L268 166 L274 178 L324 164 Z" fill="#7d5f31"/>
+    <ellipse cx="354" cy="146" rx="46" ry="30" transform="rotate(-14 354 146)" fill="#b8925a"/>
+    <path d="M340 170 C364 180 392 172 402 152 C394 166 366 172 344 164 Z" fill="#ead9b8" stroke="none"/>
+    <path d="M320 142 C338 124 372 124 386 138 C370 142 344 150 322 154 Z" fill="#8f6c38"/>
+    <circle cx="396" cy="112" r="21" fill="#b8925a"/>
+    <path d="M414 106 L434 113 L414 120 Z" fill="#a17f45"/>
+    <circle cx="403" cy="108" r="3.2" fill="#16304a" stroke="none"/>
+    <path d="M346 174 L344 186 M338 187 L350 187" fill="none"/>
+    <path d="M364 173 L364 185 M358 186 L370 186" fill="none"/>
+  </g>
+</svg>
