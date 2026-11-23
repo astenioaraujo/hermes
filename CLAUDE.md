@@ -243,6 +243,11 @@ pedido do Astênio, e são publicadas por commit + push (o Render republica).
 Matérias: nenhuma no ar. "A navalha de Occam" (nº 1) foi publicada em
 23/11/2026 e retirada no mesmo dia a pedido do Astênio (texto antigo demais);
 como ficou poucos minutos no ar, a numeração recomeça do 1 na próxima.
+**O Render não tira do ar arquivo apagado do repositório** (a página e a imagem
+continuaram respondendo 200 depois do deploy): por isso
+`public/blog/navalha-de-occam.html` ficou como redirecionamento para
+`blog.html`, com `noindex`. Para retirar outra matéria, fazer o mesmo — não
+basta apagar o arquivo.
 - Imagens das matérias ficam em `public/img/blog/` (pasta criada quando houver a primeira).
 
 **Menu com nove itens**: o Blog foi o nono, e a barra deixou de caber numa
