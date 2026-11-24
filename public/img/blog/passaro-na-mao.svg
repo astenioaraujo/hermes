@@ -1,36 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 84 500 206" role="img" aria-labelledby="t">
-  <title id="t">Um pássaro pousado numa mão aberta</title>
-  <g stroke="#16304a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
-    <!-- dedos, do mais distante (mínimo) ao mais próximo (indicador) -->
-    <path d="M360 181.0 L438 179.0 Q456 173.0 460 186.0 Q462 197.0 444 199.0 L330 201.0 Z" fill="#f1e3d3"/>
-    <path d="M360 190.5 L464 188.5 Q482 181.5 486 195.5 Q488 207.5 470 209.5 L330 211.5 Z" fill="#f1e3d3"/>
-    <path d="M360 201.0 L474 199.0 Q492 191.0 496 206.0 Q498 219.0 480 221.0 L330 223.0 Z" fill="#f1e3d3"/>
-    <!-- indicador, o dedo de cá -->
-    <path d="M360 213.0 L460 211.0 Q478 203.0 482 218.0 Q484 231.0 466 233.0 L330 235.0 Z" fill="#f1e3d3"/>
-    <!-- palma e antebraço: o preenchimento cobre a base dos dedos (sem
-         emenda reta); o contorno vai só em cima e embaixo -->
-    <path d="M30 262 C110 250 160 246 200 242 C250 238 300 238 372 235
-             L372 181 C340 186 310 196 282 202 L232 196 C200 196 160 200 30 208 Z"
-          fill="#f1e3d3" stroke="none"/>
-    <path d="M30 208 C160 200 200 196 238 197" fill="none"/>
-    <path d="M282 202 C310 196 340 186 372 181" fill="none"/>
-    <path d="M30 262 C110 250 160 246 200 242 C250 238 300 238 372 235" fill="none"/>
-    <!-- polegar, levantado do lado de cá -->
-    <path d="M236 200 C236 176 248 150 268 140 C284 132 296 142 290 158
-             C284 174 280 188 282 204" fill="#f1e3d3"/>
-    <path d="M272 144 C278 142 284 144 286 150" fill="none" stroke-opacity=".4" stroke-width="1.6"/>
-    <!-- punho da camisa -->
-    <path d="M20 196 L120 190 Q128 230 122 270 L20 278 Z" fill="#16304a"/>
-    <path d="M112 191 Q120 230 114 270" fill="none" stroke="#e9e3d6" stroke-width="2"/>
-    <!-- pássaro: cauda, corpo, peito, asa, cabeça, bico, olho, pernas -->
-    <path d="M318 150 L268 166 L274 178 L324 164 Z" fill="#7d5f31"/>
-    <ellipse cx="354" cy="146" rx="46" ry="30" transform="rotate(-14 354 146)" fill="#b8925a"/>
-    <path d="M340 170 C364 180 392 172 402 152 C394 166 366 172 344 164 Z" fill="#ead9b8" stroke="none"/>
-    <path d="M320 142 C338 124 372 124 386 138 C370 142 344 150 322 154 Z" fill="#8f6c38"/>
-    <circle cx="396" cy="112" r="21" fill="#b8925a"/>
-    <path d="M414 106 L434 113 L414 120 Z" fill="#a17f45"/>
-    <circle cx="403" cy="108" r="3.2" fill="#16304a" stroke="none"/>
-    <path d="M346 174 L344 186 M338 187 L350 187" fill="none"/>
-    <path d="M364 173 L364 185 M358 186 L370 186" fill="none"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 140 600 270" role="img" aria-labelledby="t">
+<title id="t">Um pardal pousado na palma de uma mão aberta</title>
+<defs>
+  <linearGradient id="pele" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f6dcc5"/><stop offset="1" stop-color="#e2ad8a"/>
+  </linearGradient>
+  <radialGradient id="palma" cx=".55" cy=".45" r=".65">
+    <stop offset="0" stop-color="#fbe6d3"/><stop offset=".7" stop-color="#f1cdb0"/><stop offset="1" stop-color="#dca383"/>
+  </radialGradient>
+  <linearGradient id="braco" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f3d3b9"/><stop offset="1" stop-color="#d79f7e"/>
+  </linearGradient>
+  <linearGradient id="manga" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#22456a"/><stop offset="1" stop-color="#132a43"/>
+  </linearGradient>
+  <linearGradient id="peito" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#d9d4cb"/><stop offset="1" stop-color="#b9ad9c"/>
+  </linearGradient>
+  <linearGradient id="costas" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9a6a3e"/><stop offset="1" stop-color="#6f4826"/>
+  </linearGradient>
+</defs>
+<g stroke-linejoin="round" stroke-linecap="round">
+<!-- antebraço e manga -->
+<path d="M-10 300 C80 292 150 282 202 268 L250 352 C150 372 80 386 -10 404 Z" fill="url(#braco)" stroke="#4a3226" stroke-width="2.2"/>
+<path d="M-10 286 C40 282 90 280 120 282 C130 320 130 360 122 392 C80 398 30 404 -10 412 Z" fill="url(#manga)" stroke="#0e1f33" stroke-width="2.2"/>
+<path d="M112 284 C121 320 121 360 114 390" fill="none" stroke="#e9e3d6" stroke-width="2.2"/>
+<!-- palma: contorno forte em cima e embaixo, fraco no punho -->
+<path d="M175 300 C178 288 188 276 200 268 C232 252 280 246 330 246 C368 246 392 252 404 262 C414 284 414 310 406 332 C376 350 300 360 230 354 C195 350 175 330 175 300 Z" fill="url(#palma)"/>
+<path d="M200 268 C232 252 280 246 330 246 C368 246 392 252 404 262" fill="none" stroke="#4a3226" stroke-width="2.2"/>
+<path d="M406 332 C376 350 300 360 230 354" fill="none" stroke="#4a3226" stroke-width="2.2"/>
+<path d="M230 354 C195 350 175 330 175 300 C178 288 188 276 200 268" fill="none" stroke="#4a3226" stroke-opacity=".25" stroke-width="1.6"/>
+<!-- dedos, do mínimo ao indicador -->
+<path d="M380 262 Q448 251 486 247 Q502 245 507 232" fill="none" stroke="#4a3226" stroke-width="28" stroke-linecap="round"/>
+<path d="M380 262 Q448 251 486 247 Q502 245 507 232" fill="none" stroke="url(#pele)" stroke-width="23" stroke-linecap="round"/>
+<path d="M380 262 Q448 251 486 247 Q502 245 507 232" fill="none" stroke="#fbe7d6" stroke-opacity=".55" stroke-width="6.44" stroke-linecap="round" transform="translate(0 -5.06)"/>
+<path d="M452 243.64 q3 7.36 0 14.72" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M486 239.64 q3 7.36 0 14.72" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+
+<path d="M380 282 Q468 273 528 269 Q545 267 551 252" fill="none" stroke="#4a3226" stroke-width="31" stroke-linecap="round"/>
+<path d="M380 282 Q468 273 528 269 Q545 267 551 252" fill="none" stroke="url(#pele)" stroke-width="26" stroke-linecap="round"/>
+<path d="M380 282 Q468 273 528 269 Q545 267 551 252" fill="none" stroke="#fbe7d6" stroke-opacity=".55" stroke-width="7.280000000000001" stroke-linecap="round" transform="translate(0 -5.72)"/>
+<path d="M462 266.68 q3 8.32 0 16.64" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M512 261.68 q3 8.32 0 16.64" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+
+<path d="M380 304 Q478 297 544 295 Q562 293 567 277" fill="none" stroke="#4a3226" stroke-width="32" stroke-linecap="round"/>
+<path d="M380 304 Q478 297 544 295 Q562 293 567 277" fill="none" stroke="url(#pele)" stroke-width="27" stroke-linecap="round"/>
+<path d="M380 304 Q478 297 544 295 Q562 293 567 277" fill="none" stroke="#fbe7d6" stroke-opacity=".55" stroke-width="7.5600000000000005" stroke-linecap="round" transform="translate(0 -5.94)"/>
+<path d="M470 290.36 q3 8.64 0 17.28" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M526 287.36 q3 8.64 0 17.28" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+
+<path d="M380 326 Q468 323 526 323 Q544 322 550 306" fill="none" stroke="#4a3226" stroke-width="31" stroke-linecap="round"/>
+<path d="M380 326 Q468 323 526 323 Q544 322 550 306" fill="none" stroke="url(#pele)" stroke-width="26" stroke-linecap="round"/>
+<path d="M380 326 Q468 323 526 323 Q544 322 550 306" fill="none" stroke="#fbe7d6" stroke-opacity=".55" stroke-width="7.280000000000001" stroke-linecap="round" transform="translate(0 -5.72)"/>
+<path d="M462 315.68 q3 8.32 0 16.64" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M512 314.68 q3 8.32 0 16.64" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+
+<!-- a palma cobre a base dos dedos -->
+<path d="M175 300 C178 288 188 276 200 268 C232 252 280 246 330 246 C368 246 392 252 404 262 C414 284 414 310 406 332 C376 350 300 360 230 354 C195 350 175 330 175 300 Z" fill="url(#palma)"/>
+<!-- prega na base dos dedos -->
+<path d="M404 262 C414 284 414 310 406 332" fill="none" stroke="#4a3226" stroke-opacity=".22" stroke-width="1.5"/>
+<!-- linhas da mão -->
+<path d="M292 262 Q350 266 400 276" fill="none" stroke="#4a3226" stroke-opacity=".28" stroke-width="1.5"/>
+<path d="M246 300 Q312 288 388 300" fill="none" stroke="#4a3226" stroke-opacity=".25" stroke-width="1.5"/>
+<path d="M232 322 Q262 300 300 290" fill="none" stroke="#4a3226" stroke-opacity=".22" stroke-width="1.5"/>
+<!-- polegar, do lado de cá -->
+<path d="M236 344 Q292 370 346 368 Q366 366 374 352" fill="none" stroke="#4a3226" stroke-width="35" stroke-linecap="round"/>
+<path d="M236 344 Q292 370 346 368 Q366 366 374 352" fill="none" stroke="url(#pele)" stroke-width="30" stroke-linecap="round"/>
+<path d="M236 344 Q292 370 346 368 Q366 366 374 352" fill="none" stroke="#fbe7d6" stroke-opacity=".55" stroke-width="8.4" stroke-linecap="round" transform="translate(0 -6.6)"/>
+<path d="M300 354.4 q3 9.6 0 19.2" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+<path d="M344 356.4 q3 9.6 0 19.2" fill="none" stroke="#4a3226" stroke-opacity=".35" stroke-width="1.4"/>
+
+<path d="M220 330 C236 352 262 360 290 362" fill="none" stroke="#4a3226" stroke-opacity=".3" stroke-width="1.5"/>
+<!-- sombra do pássaro na palma -->
+<ellipse cx="300" cy="303" rx="62" ry="11" fill="#7a4a2e" opacity=".22"/>
+<!-- pássaro (pardal) -->
+<g stroke="#4a3226" stroke-width="2">
+  <!-- cauda -->
+  <path d="M256 250 L196 286 L203 296 L214 292 L210 302 L264 268 Z" fill="#5e3d22"/>
+  <!-- patas -->
+  <path d="M290 270 L288 300 M288 300 l-12 2 M288 300 l12 1 M288 300 l-3 -6" fill="none" stroke="#a8705c" stroke-width="3.2"/>
+  <path d="M314 270 L314 300 M314 300 l-11 2 M314 300 l12 1" fill="none" stroke="#a8705c" stroke-width="3.2"/>
+  <!-- corpo -->
+  <ellipse cx="300" cy="236" rx="60" ry="42" transform="rotate(-16 300 236)" fill="url(#costas)"/>
+  <!-- peito e barriga -->
+  <path d="M276 270 C300 284 342 276 356 246 C362 228 356 212 346 204 C338 230 318 254 276 270 Z" fill="url(#peito)" stroke="none"/>
+  <!-- asa, com estrias e a barra branca -->
+  <path d="M246 228 C262 202 300 194 330 204 C320 228 296 252 258 262 C248 254 244 240 246 228 Z" fill="#7a4f2a"/>
+  <path d="M262 214 C282 206 304 205 322 210" fill="none" stroke="#f1ece2" stroke-width="3"/>
+  <path d="M258 236 L290 222 M262 248 L298 232 M270 256 L304 242" fill="none" stroke="#2d1d12" stroke-width="2.4"/>
+  <path d="M252 230 C264 238 278 244 300 246" fill="none" stroke="#c9a57a" stroke-width="1.6"/>
+  <!-- cabeça -->
+  <circle cx="352" cy="182" r="31" fill="#8c6845"/>
+  <path d="M328 166 C336 152 356 148 372 156 C364 164 348 168 330 172 Z" fill="#8a8580" stroke="none"/>
+  <path d="M330 176 C338 170 352 170 360 174 C352 184 340 190 328 190 Z" fill="#6b4022" stroke="none"/>
+  <path d="M352 186 C364 182 378 186 380 196 C372 208 356 210 346 202 Z" fill="#efe8dc" stroke="none"/>
+  <path d="M358 198 C366 204 372 214 366 226 C356 222 350 212 352 202 Z" fill="#1e1712" stroke="none"/>
+  <!-- bico -->
+  <path d="M378 178 L398 186 L378 192 Z" fill="#3a2a20"/>
+  <!-- olho -->
+  <circle cx="365" cy="177" r="4.6" fill="#120c08" stroke="none"/>
+  <circle cx="366.6" cy="175.4" r="1.4" fill="#fff" stroke="none"/>
+</g>
+</g>
 </svg>
