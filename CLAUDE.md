@@ -245,13 +245,12 @@ abertura do capítulo 1, "Simplicidade", de *Ideias que Colam* (Chip e Dan
 Heath). O Astênio mandou o trecho do livro; ele não foi publicado por ser texto
 dos autores. **Matéria baseada em livro leva o quadro `.materia__fonte`** no fim
 (obra, capítulo, autores e a ideia que se tirou dali), dizendo que o texto é
-próprio — nada de transcrição nem tradução. Ilustração: pardal no meio da palma de uma mão aberta, em estilo cartoon com
-volume (`img/blog/passaro-na-mao.svg`). A primeira versão, chapada e com o
-pássaro na ponta dos dedos, foi recusada como simplória. O que deu volume:
-dedos como traço grosso de ponta redonda (contorno escuro + pele por cima +
-brilho fino), gradientes na pele, linhas da mão, sombra do pássaro na palma e
-plumagem de pardal. Para conferir um SVG sem navegador:
-`qlmanage -t -s 1000 -o <pasta> arquivo.svg` gera um PNG.
+próprio — nada de transcrição nem tradução. Imagem: **foto real** de um chapim numa mão aberta, de Allen Y no Unsplash
+(licença livre, crédito na legenda), em `img/blog/passaro-na-mao.jpg|webp`
+(1600px). Antes dela, duas ilustrações em SVG feitas à mão foram recusadas
+como artificiais — **para imagem realista, usar foto com licença livre
+(Unsplash, Pexels, Wikimedia), nunca desenho em código**. Figura de foto leva
+`class="foto"` (ocupa a largura do texto) e o crédito na `figcaption`.
 
 Retirada: "A navalha de Occam" (nº 1) foi publicada em
 23/11/2026 e retirada no mesmo dia a pedido do Astênio (texto antigo demais);

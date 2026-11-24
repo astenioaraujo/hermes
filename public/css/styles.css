@@ -1536,6 +1536,8 @@ figure.hero__citacao figcaption span{
 }
 .materia__corpo figure{ margin:1.8em 0; }
 .materia__corpo figure img{ width:100%; max-width:560px; height:auto; border-radius:12px; }
+.materia__corpo figure.foto img{ max-width:none; }
+.materia__corpo figcaption a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
 .materia__corpo figcaption{ margin-top:8px; font-size:.85rem; color:var(--text-faint); }
 
 /* crédito da fonte, no fim da matéria */
